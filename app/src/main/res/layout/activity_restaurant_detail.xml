@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activity.home.search.hotel.RestaurantDetailActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rlImageView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_400sdp"
+                android:layout_weight="1">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/ivIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_restaurant"
+                    app:failureImage="@drawable/ic_placeholder_square"
+                    app:failureImageScaleType="fitXY"
+                    app:placeholderImage="@drawable/ic_placeholder_square"
+                    app:placeholderImageScaleType="fitXY" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/dr_center_gradient_transparent_bg" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btnBack"
+                    style="@style/Text12RegularSecondary"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:src="@drawable/ic_back_white_arrow" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_minus60sdp"
+                android:layout_weight="1"
+                android:background="@drawable/dr_top_white_bg_30"
+                android:backgroundTint="@color/colorWhite"
+                android:paddingBottom="@dimen/_60sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/_15sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/llEnd"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvName"
+                                style="@style/Text16MediumBlack"
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="Britto's Restaurant" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTag"
+                                style="@style/Text10RegularGray"
+                                android:layout_width="wrap_content"
+                                android:text="Indian • Multi Cuisine" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:id="@+id/btnCall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/dr_primary_bg_6"
+                                android:paddingHorizontal="@dimen/_8sdp"
+                                android:paddingVertical="@dimen/_5sdp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ivCall"
+                                    android:layout_width="13dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/ic_call" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/Text12MediumWhite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="@dimen/_6sdp"
+                                    android:layout_toEndOf="@+id/ivCall"
+                                    android:text="@string/call" />
+
+                            </RelativeLayout>
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/icLocation"
+                                android:layout_width="@dimen/_25sdp"
+                                android:layout_height="@dimen/_25sdp"
+                                android:layout_marginHorizontal="@dimen/_8sdp"
+                                android:src="@drawable/ic_location_circle" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/icLocationDirection"
+                                android:layout_width="@dimen/_25sdp"
+                                android:layout_height="@dimen/_25sdp"
+                                android:src="@drawable/ic_location_arrow_circle" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <View
+                        style="@style/ViewLightBorderStyle"
+                        android:layout_margin="@dimen/_15sdp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDescription"
+                        style="@style/Text10RegularBlack"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:singleLine="false"
+                        tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer." />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_15sdp"
+                        android:background="@drawable/dr_white_fill_gray_border_10"
+                        android:padding="@dimen/_10sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgClock"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_clock_secondary" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvDayName"
+                            style="@style/Text11RegularBlack"
+                            android:layout_width="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginHorizontal="@dimen/_6sdp"
+                            android:layout_toStartOf="@id/tvTime"
+                            android:layout_toEndOf="@id/imgClock"
+                            android:text="Monday - Sunday" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvTime"
+                            style="@style/Text11RegularBlack"
+                            android:layout_width="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:text="7:00 am - 11:00 pm" />
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Text12MediumBlack"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:text="@string/restaurant_menu"
+                        android:visibility="gone" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="2"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/raw_restaurant_menu" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnMakeReservation"
+        style="@style/ButtonPrimaryStyle"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:text="@string/make_a_reservation" />
+
+</RelativeLayout>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorF1F1F1"
+    android:orientation="vertical"
+    tools:context=".view.fragment.Home1Fragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/m3_bottom_nav_min_height">
+
+            <com.xongolab.hotellifyr.custom.RoundableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="4dp"
+                app:cornerLeftBottom="@dimen/_30sdp"
+                app:cornerRightBottom="@dimen/_30sdp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_home_top_bg" />
+
+                    <!-- <View
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:background="@drawable/home_top_view_blur_bg" />-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="@dimen/_15sdp"
+                        android:paddingTop="@dimen/_50sdp"
+                        android:paddingBottom="@dimen/_15sdp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/icLocation"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_location" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvLocation"
+                                style="@style/Text12RegularWhite"
+                                android:layout_width="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_toStartOf="@id/ivNotification"
+                                android:layout_toEndOf="@id/icLocation"
+                                tools:text="Madgaon, Goa" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivNotification"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_toStartOf="@id/ivProfile"
+                                android:src="@drawable/ic_notification" />
+
+                            <com.facebook.drawee.view.SimpleDraweeView
+                                android:id="@+id/ivProfile"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                app:actualImageResource="@drawable/ic_dummy_user"
+                                app:placeholderImage="@drawable/ic_placeholder_square"
+                                app:roundAsCircle="true" />
+
+                        </RelativeLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvGreeting"
+                            style="@style/Text14BoldWhite"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:singleLine="false"
+                            android:text="Hello, Jennifer! Tell us where you want to go" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvSearchBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:elevation="@dimen/_6sdp"
+                            app:cardCornerRadius="@dimen/_32sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/dr_transparent_black_15"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="@dimen/_15sdp"
+                                android:paddingVertical="@dimen/_6sdp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_18sdp"
+                                    android:layout_height="@dimen/_18sdp"
+                                    android:src="@drawable/ic_search" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:orientation="vertical">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvSearch"
+                                        style="@style/Text12RegularWhite"
+                                        android:text="@string/search_places" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        style="@style/Text12RegularWhite"
+                                        android:text="@string/date_range_number_of_guests" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </com.xongolab.hotellifyr.custom.RoundableLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHotelTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="1"
+                tools:listitem="@layout/raw_hotel_tag" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCurrentOffer"
+                style="@style/Text14MediumBlack"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:singleLine="false"
+                android:text="@string/current_offers" />
+
+            <include
+                android:id="@+id/llCurrentOffers"
+                layout="@layout/layout_current_offers" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvRewardsCircle"
+                    style="@style/Text14MediumBlack"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:singleLine="false"
+                    android:text="@string/rewards_circle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvRewardsCircleSeeAll"
+                    style="@style/Text12MediumSecondary"
+                    android:layout_width="wrap_content"
+                    android:singleLine="false"
+                    android:text="@string/see_all" />
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/llRewardCircle"
+                layout="@layout/layout_reward_circle" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBestOffers"
+                    style="@style/Text14MediumBlack"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:singleLine="false"
+                    android:text="@string/best_offers" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBestOffersSeeAll"
+                    style="@style/Text12MediumSecondary"
+                    android:layout_width="wrap_content"
+                    android:singleLine="false"
+                    android:text="@string/see_all" />
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/llBestOffers"
+                layout="@layout/layout_best_offers" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_15sdp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

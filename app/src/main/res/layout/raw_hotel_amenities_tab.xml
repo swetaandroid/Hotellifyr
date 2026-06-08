@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llHotelAmenitiesView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/_7sdp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        style="@style/Text11RegularGray"
+        android:layout_width="wrap_content"
+        android:paddingVertical="@dimen/_8sdp"
+        android:text="Nearest Destinations" />
+
+    <View
+        android:id="@+id/viewBorder"
+        style="@style/ViewBorderStyle"
+        android:layout_width="wrap_content"
+        android:background="@color/colorPrimary" />
+
+</LinearLayout>

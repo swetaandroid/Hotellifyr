@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/_20sdp"
+    tools:context=".view.activity.home.search.hotel.HotelOfferActivity">
+
+    <include
+        android:id="@+id/layoutToolBar"
+        layout="@layout/normal_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHotelOffer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutToolBar"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="1"
+        tools:listitem="@layout/raw_view_all_hotel" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNoDataFound"
+        style="@style/Text11RegularGray"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:gravity="center"
+        android:text="@string/no_data_found"
+        android:visibility="gone" />
+
+</RelativeLayout>

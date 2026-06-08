@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorTransparent"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvHotelList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_70sdp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:cardElevation="@dimen/_3sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rlTop"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp">
+
+                <!--<androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />-->
+
+                <View
+                    android:id="@+id/viewDefault"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ic_placeholder_rectangle"
+                    android:visibility="gone" />
+
+                <!--<com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    app:dotsClickable="false"
+                    app:dotsColor="@color/colorWhiteTrans20"
+                    app:dotsSize="@dimen/_6sdp"
+                    app:dotsSpacing="@dimen/_2sdp"
+                    app:selectedDotColor="@color/colorPrimary" />-->
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_gallery_1" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_12sdp"
+                    android:background="@drawable/dr_white_bg_6"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/_2sdp"
+                    android:paddingStart="@dimen/_2sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/raw_pager_image" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/dr_transparent_bg_with_white_border_30"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_3sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_13sdp"
+                        android:layout_height="@dimen/_13sdp"
+                        android:src="@drawable/ic_star_fill" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvStar"
+                        style="@style/Text11RegularBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        tools:text="4.8" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnWishlist"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:background="@drawable/dr_gray_circle_with_border"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivWish"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:src="@drawable/ic_wish" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rlTop"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/llWishList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvTitle"
+                            style="@style/Text12BoldBlack"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_toStartOf="@+id/llDistance"
+                            android:maxLines="2"
+                            android:singleLine="false"
+                            tools:text="Royal Orchid Beach Resort &amp; Spa, Goa" />
+
+                        <LinearLayout
+                            android:id="@+id/llDistance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:visibility="invisible"
+                            tools:visibility="visible">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:src="@drawable/ic_location_primary" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvKm"
+                                style="@style/Text10RegularGray"
+                                android:layout_width="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                tools:text="18.2" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_toStartOf="@+id/btnViewHotel"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text10RegularBlack"
+                                android:layout_width="wrap_content"
+                                android:text="@string/from" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvPrice"
+                                style="@style/Text14MediumPrimary"
+                                android:layout_width="wrap_content"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                tools:text="₹ 12,500" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text12RegularGray"
+                                android:layout_width="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:text="@string/night" />
+
+                        </LinearLayout>
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/btnViewHotel"
+                            style="@style/Text10BoldWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/dr_primary_bg_10"
+                            android:paddingHorizontal="@dimen/_10sdp"
+                            android:paddingVertical="@dimen/_6sdp"
+                            android:text="@string/view_hotel" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llBookingHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_15sdp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvTitleBookingHistory"
+                            style="@style/Text12MediumBlack"
+                            android:maxLines="2"
+                            android:singleLine="false"
+                            tools:text="Royal Orchid Beach Resort &amp; Spa, Goa" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:src="@drawable/ic_location_gray" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvKmBookingHistory"
+                                style="@style/Text10RegularBlack"
+                                android:layout_width="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                tools:text="Utorda Beach Rd, Utarda, Goa 403713" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text10RegularBlack"
+                                android:layout_width="wrap_content"
+                                android:text="@string/from" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvPriceBookingHistory"
+                                    style="@style/Text14MediumSecondary"
+                                    android:layout_width="wrap_content"
+                                    tools:text="₹ 12,500" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/Text12RegularGray"
+                                    android:layout_width="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:text="/Night" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text10RegularBlack"
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="end"
+                                android:text="Check-in" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvCheckInDate"
+                                style="@style/Text10RegularPrimary"
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="end"
+                                tools:text="21 Jun 2024" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text10RegularBlack"
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="@dimen/_13sdp"
+                                android:text="Check-out" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvCheckOut"
+                                style="@style/Text10RegularPrimary"
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="end"
+                                tools:text="21 Jun 2024" />
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTotalGuests"
+                                style="@style/Text10RegularGray"
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="end"
+                                tools:text="3 night, 2 guests" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

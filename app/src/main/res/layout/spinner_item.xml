@@ -1,0 +1,9 @@
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/select_spinner_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/product_sans_regular"
+    android:hint="@string/select_start_ride_time"
+    android:textColorHint="@color/colorGray"
+    android:textSize="@dimen/_12ssp" />
+

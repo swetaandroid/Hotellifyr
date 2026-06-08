@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dr_white_bg_15"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/_15sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_15sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/Text16BoldBlack"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="@string/gallery" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivClose"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_5sdp"
+            app:srcCompat="@drawable/ic_close_black" />
+
+    </RelativeLayout>
+
+    <View style="@style/ViewLightBorderStyle" />
+
+    <LinearLayout
+        android:id="@+id/llViewImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/imgViewImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_margin="@dimen/_15sdp"
+            android:scaleType="fitXY"
+            app:actualImageResource="@drawable/img_gallery_3"
+            app:failureImage="@drawable/ic_placeholder_rectangle"
+            app:failureImageScaleType="fitXY"
+            app:placeholderImage="@drawable/ic_placeholder_rectangle"
+            app:placeholderImageScaleType="fitXY" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCount"
+            style="@style/Text12RegularGray"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:gravity="center"
+            android:text="10/40" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvViewImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15sdp"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/raw_view_gallery_image" />
+
+    </LinearLayout>
+
+</LinearLayout>

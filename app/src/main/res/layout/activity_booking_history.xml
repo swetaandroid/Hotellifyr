@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".view.activity.account.BookingHistoryActivity">
+
+    <include
+        android:id="@+id/layoutToolBar"
+        layout="@layout/normal_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_8sdp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/m3_bottom_nav_min_height"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Text12RegularGray"
+            android:layout_margin="@dimen/_15sdp"
+            android:singleLine="false"
+            android:text="@string/view_your_previous_stays_and_booking_details_in_one_place" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llUpcoming"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUpcoming"
+                    style="@style/Text12RegularOutLine"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="@string/upcoming" />
+
+                <View
+                    android:id="@+id/viewUpcoming"
+                    style="@style/ViewBorderStyle"
+                    android:background="@color/colorSecondary"
+                    android:visibility="gone" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llPast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPast"
+                    style="@style/Text12RegularOutLine"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="@string/past" />
+
+                <View
+                    android:id="@+id/viewPast"
+                    style="@style/ViewBorderStyle"
+                    android:background="@color/colorSecondary"
+                    android:visibility="gone" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llCancelled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCancelled"
+                    style="@style/Text12RegularOutLine"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="@string/cancelled" />
+
+                <View
+                    android:id="@+id/viewCancelled"
+                    style="@style/ViewBorderStyle"
+                    android:background="@color/colorSecondary"
+                    android:visibility="gone" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View style="@style/ViewBorderStyle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBookingHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="3"
+            tools:listitem="@layout/raw_wish_list" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llNoData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgNoBookingHistory"
+                android:layout_width="@dimen/_170sdp"
+                android:layout_height="@dimen/_130sdp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_no_booking_history" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNoDataDesc"
+                style="@style/Text11RegularGray"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="@string/booking_history_desc" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnBookTrip"
+                style="@style/Text10BoldWhite"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_15sdp"
+                android:background="@drawable/dr_primary_bg_10"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_6sdp"
+                android:text="@string/book_trip" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerFrameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical"
+                shimmer:duration="800">
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:columnCount="2"
+                    android:orientation="horizontal"
+                    android:rowCount="2">
+
+                    <include layout="@layout/shimmer_item_booking_history" />
+
+                    <include layout="@layout/shimmer_item_booking_history" />
+
+                    <include layout="@layout/shimmer_item_booking_history" />
+
+                </GridLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

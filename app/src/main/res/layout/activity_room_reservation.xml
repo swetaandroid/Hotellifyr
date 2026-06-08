@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:context=".view.activity.home.RoomReservationActivity">
+
+    <com.xongolab.hotellifyr.custom.RoundableLayout
+        android:id="@+id/roundLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_160sdp"
+        android:elevation="4dp"
+        app:cornerLeftBottom="@dimen/_30sdp"
+        app:cornerRightBottom="@dimen/_30sdp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_15sdp">
+
+                <RelativeLayout
+                    android:id="@+id/rlToolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btnBack"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/ic_back_black_arrow" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvToolBarTitle"
+                        style="@style/Text14BoldBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/select_rooms" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/llDateRange"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rlToolBar"
+                    android:layout_marginTop="@dimen/_20sdp">
+
+                    <!--    TODO ::: Check in-->
+                    <RelativeLayout
+                        android:id="@+id/rlCheckIn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvCheckIn"
+                            style="@style/Text12RegularGray"
+                            android:layout_width="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/check_in" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvCheckIn"
+                            android:layout_marginTop="@dimen/_10sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvCheckInDate"
+                                style="@style/Text14MediumBlack"
+                                android:layout_width="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:includeFontPadding="false"
+                                android:textSize="@dimen/_30ssp"
+                                tools:text="18" />
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_6sdp"
+                                android:layout_toEndOf="@id/tvCheckInDate"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvCheckInWeek"
+                                    style="@style/Text10MediumBlack"
+                                    android:layout_width="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:paddingTop="@dimen/_1sdp"
+                                    app:textAllCaps="true"
+                                    tools:text="THU" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvCheckInMonth"
+                                    style="@style/Text10MediumBlack"
+                                    android:layout_width="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:includeFontPadding="false"
+                                    android:paddingTop="@dimen/_1sdp"
+                                    app:textAllCaps="true"
+                                    tools:text="JUL" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvNoOfNights"
+                        style="@style/Text10MediumWhite"
+                        android:layout_width="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/dr_primary_bg_6"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_4sdp"
+                        android:text="0 Night" />
+
+
+                    <!--    TODO ::: Check out-->
+                    <RelativeLayout
+                        android:id="@+id/rlCheckOut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvCheckOut"
+                            style="@style/Text12RegularGray"
+                            android:layout_width="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/check_out" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvCheckOut"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:gravity="center_vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvCheckOutDate"
+                                style="@style/Text14MediumBlack"
+                                android:layout_width="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:includeFontPadding="false"
+                                android:textSize="@dimen/_30ssp"
+                                tools:text="19" />
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_6sdp"
+                                android:layout_toEndOf="@id/tvCheckOutDate"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvCheckOutWeek"
+                                    style="@style/Text10MediumBlack"
+                                    android:layout_width="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:paddingTop="@dimen/_1sdp"
+                                    app:textAllCaps="true"
+                                    tools:text="THU" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvCheckOutMonth"
+                                    style="@style/Text10MediumBlack"
+                                    android:layout_width="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:includeFontPadding="false"
+                                    android:paddingTop="@dimen/_1sdp"
+                                    app:textAllCaps="true"
+                                    tools:text="JUL" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+    </com.xongolab.hotellifyr.custom.RoundableLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:id="@+id/llFirstHotel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.facebook.drawee.view.SimpleDraweeView
+                                android:id="@+id/ivHotel"
+                                android:layout_width="@dimen/_80sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:scaleType="fitXY"
+                                app:placeholderImage="@drawable/ic_placeholder_square"
+                                app:roundedCornerRadius="@dimen/_10sdp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_toEndOf="@id/ivHotel"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvRoomNameFirst"
+                                        style="@style/Text12BoldBlack"
+                                        android:layout_weight="2"
+                                        android:singleLine="true"
+                                        android:text="Room 1 - Not selected" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/icClose"
+                                        android:layout_width="@dimen/_25sdp"
+                                        android:layout_height="@dimen/_25sdp"
+                                        android:src="@drawable/ic_close_booking"
+                                        android:visibility="gone" />
+                                </LinearLayout>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:id="@+id/llTotalGuestsFirst"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvTotalGuestsFirst"
+                                        style="@style/Text10RegularPrimary"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:singleLine="false"
+                                        android:text="0 guest" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="@dimen/_10sdp"
+                                        android:layout_height="@dimen/_10sdp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_5sdp"
+                                        android:src="@drawable/ic_down_arrow_black" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvRoomRatesFirst"
+                                    style="@style/Text10RegularPrimary"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:singleLine="false"
+                                    android:text="0 INR" />
+
+                            </LinearLayout>
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/btnSelectRoom"
+                                style="@style/Text10MediumWhite"
+                                android:layout_width="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:background="@drawable/dr_primary_bg_6"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="@dimen/_10sdp"
+                                android:paddingVertical="@dimen/_2sdp"
+                                android:text="@string/select" />
+                        </RelativeLayout>
+
+                        <View
+                            style="@style/ViewBorderStyle"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_6sdp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llSecondHotel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.facebook.drawee.view.SimpleDraweeView
+                                android:id="@+id/ivHotelSecond"
+                                android:layout_width="@dimen/_80sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:scaleType="fitXY"
+                                app:placeholderImage="@drawable/ic_placeholder_square"
+                                app:roundedCornerRadius="@dimen/_10sdp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_toEndOf="@id/ivHotelSecond"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvRoomNameSecond"
+                                        style="@style/Text12BoldBlack"
+                                        android:layout_weight="2"
+                                        android:singleLine="true"
+                                        android:text="Room 2 - Not selected" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/icCloseSecond"
+                                        android:layout_width="@dimen/_25sdp"
+                                        android:layout_height="@dimen/_25sdp"
+                                        android:src="@drawable/ic_close_booking" />
+                                </LinearLayout>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:id="@+id/llTotalGuestsSecond"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvTotalGuestsSecond"
+                                        style="@style/Text10RegularPrimary"
+                                        android:layout_width="wrap_content"
+                                        android:singleLine="false"
+                                        android:text="0 guest" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="@dimen/_10sdp"
+                                        android:layout_height="@dimen/_10sdp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_5sdp"
+                                        android:src="@drawable/ic_down_arrow_black" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvRoomRatesSecond"
+                                    style="@style/Text10RegularPrimary"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:singleLine="false"
+                                    android:text="0 INR" />
+
+                            </LinearLayout>
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/btnSelectRoomSecond"
+                                style="@style/Text10MediumWhite"
+                                android:layout_width="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:background="@drawable/dr_primary_bg_6"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="@dimen/_10sdp"
+                                android:paddingVertical="@dimen/_2sdp"
+                                android:text="@string/select" />
+                        </RelativeLayout>
+
+                        <View
+                            style="@style/ViewBorderStyle"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_6sdp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llThirdHotel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.facebook.drawee.view.SimpleDraweeView
+                                android:id="@+id/ivHotelThird"
+                                android:layout_width="@dimen/_80sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:scaleType="fitXY"
+                                app:placeholderImage="@drawable/ic_placeholder_square"
+                                app:roundedCornerRadius="@dimen/_10sdp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_toEndOf="@id/ivHotelThird"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvRoomNameThird"
+                                        style="@style/Text12BoldBlack"
+                                        android:layout_weight="2"
+                                        android:singleLine="true"
+                                        android:text="Room 3 - Not selected" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/icCloseThird"
+                                        android:layout_width="@dimen/_25sdp"
+                                        android:layout_height="@dimen/_25sdp"
+                                        android:src="@drawable/ic_close_booking" />
+                                </LinearLayout>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:id="@+id/llTotalGuestsThird"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvTotalGuestsThird"
+                                        style="@style/Text10RegularPrimary"
+                                        android:layout_width="wrap_content"
+                                        android:singleLine="false"
+                                        android:text="0 guest" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="@dimen/_10sdp"
+                                        android:layout_height="@dimen/_10sdp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_5sdp"
+                                        android:src="@drawable/ic_down_arrow_black" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvRoomRatesThird"
+                                    style="@style/Text10RegularPrimary"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:singleLine="false"
+                                    android:text="0 INR" />
+
+                            </LinearLayout>
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/btnSelectRoomThird"
+                                style="@style/Text10MediumWhite"
+                                android:layout_width="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:background="@drawable/dr_primary_bg_6"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="@dimen/_10sdp"
+                                android:paddingVertical="@dimen/_2sdp"
+                                android:text="Select" />
+
+                        </RelativeLayout>
+
+                        <View
+                            style="@style/ViewBorderStyle"
+                            android:layout_marginTop="@dimen/_10sdp" />
+
+                    </LinearLayout>
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/btnRoom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:background="@drawable/dr_dotted_round_primary_6"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_6sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_add" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text10RegularPrimary"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_6sdp"
+                            android:text="@string/add_room" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- TODO ::: GONE  -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/cvRoomWisePrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="2dp">
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="@dimen/_2sdp"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_12sdp">
+
+                        <LinearLayout
+                            android:id="@+id/llPriceInfoView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvPriceInfo"
+                                style="@style/Text12RegularBlack"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:singleLine="false"
+                                android:text="@string/price" />
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTotalPrice"
+                                style="@style/Text12BoldPrimary"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="29,000.00 INR" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llPriceInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:id="@+id/llFirstPrice"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvRoomNameFirstPrice"
+                                    style="@style/Text10RegularGray"
+                                    android:layout_width="wrap_content"
+                                    tools:text="Price" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvRoomPricePerDayFirst"
+                                    style="@style/Text10RegularPrimary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_marginStart="@dimen/_6sdp"
+                                    android:visibility="gone"
+                                    tools:text="29,000.00 INR" />
+
+                            </LinearLayout>
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvRoomPriceDayWiseFirst"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:clipToPadding="false"
+                                android:nestedScrollingEnabled="false"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                tools:itemCount="3"
+                                tools:listitem="@layout/raw_day_wise_price" />
+
+                            <LinearLayout
+                                android:id="@+id/llSecondPrice"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_6sdp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvRoomNameSecondPrice"
+                                    style="@style/Text10RegularGray"
+                                    android:layout_width="wrap_content"
+                                    tools:text="Price" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvRoomPricePerDaySecond"
+                                    style="@style/Text10RegularPrimary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_marginStart="@dimen/_6sdp"
+                                    android:visibility="gone"
+                                    tools:text="29,000.00 INR" />
+
+                            </LinearLayout>
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvRoomPriceDayWiseSecond"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:clipToPadding="false"
+                                android:nestedScrollingEnabled="false"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                tools:itemCount="3"
+                                tools:listitem="@layout/raw_day_wise_price" />
+
+                            <LinearLayout
+                                android:id="@+id/llThirdPrice"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_6sdp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvRoomNameThirdPrice"
+                                    style="@style/Text10RegularGray"
+                                    android:layout_width="wrap_content"
+                                    tools:text="Price" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvRoomPricePerDayThird"
+                                    style="@style/Text10RegularPrimary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_marginStart="@dimen/_6sdp"
+                                    android:visibility="gone"
+                                    tools:text="29,000.00 INR" />
+
+                            </LinearLayout>
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvRoomPriceDayWiseThird"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:clipToPadding="false"
+                                android:nestedScrollingEnabled="false"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                tools:itemCount="3"
+                                tools:listitem="@layout/raw_day_wise_price" />
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/ViewBorderStyle"
+                            android:layout_marginVertical="@dimen/_8sdp" />
+
+                        <LinearLayout
+                            android:id="@+id/llTaxInfoView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTaxInfo"
+                                style="@style/Text12RegularBlack"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:singleLine="false"
+                                android:text="@string/taxes_and_fees" />
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTotalTax"
+                                style="@style/Text12BoldPrimary"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="29,000.00 INR" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llTaxInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:id="@+id/llTaxFirst"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingTop="@dimen/_6sdp"
+                                android:visibility="gone">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvTaxRoomNameFirst"
+                                    style="@style/Text10RegularGray"
+                                    tools:text="Price" />
+
+                                <!--<androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvTaxFirst"
+                                    style="@style/Text10RegularGray"
+                                    tools:text="Price"/>-->
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvRoomTaxDayWiseFirst"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:clipToPadding="false"
+                                    android:nestedScrollingEnabled="false"
+                                    android:orientation="vertical"
+                                    android:visibility="gone"
+                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                    tools:itemCount="3"
+                                    tools:listitem="@layout/raw_day_wise_price" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llTaxSecond"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingTop="@dimen/_6sdp"
+                                android:visibility="gone">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvTaxRoomNameSecond"
+                                    style="@style/Text10RegularGray"
+                                    tools:text="Price" />
+                                <!--  <androidx.appcompat.widget.AppCompatTextView
+                                      android:id="@+id/tvTaxSecond"
+                                      style="@style/Text10RegularGray"
+                                      tools:text="Price"/>-->
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvRoomTaxDayWiseSecond"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:clipToPadding="false"
+                                    android:nestedScrollingEnabled="false"
+                                    android:orientation="vertical"
+                                    android:visibility="gone"
+                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                    tools:itemCount="3"
+                                    tools:listitem="@layout/raw_day_wise_price" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llTaxThird"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingTop="@dimen/_6sdp"
+                                android:visibility="gone">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvTaxRoomNameThird"
+                                    style="@style/Text10RegularGray"
+                                    tools:text="Price" />
+                                <!-- <androidx.appcompat.widget.AppCompatTextView
+                                     android:id="@+id/tvTaxThird"
+                                     style="@style/Text10RegularGray"
+                                     tools:text="Price"/>-->
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvRoomTaxDayWiseThird"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:clipToPadding="false"
+                                    android:nestedScrollingEnabled="false"
+                                    android:orientation="vertical"
+                                    android:visibility="gone"
+                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                    tools:itemCount="3"
+                                    tools:listitem="@layout/raw_day_wise_price" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="2dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="@dimen/_2sdp"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_12sdp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text12RegularBlack"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:singleLine="false"
+                                android:text="@string/round_off_price" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvRoundOffPrice"
+                                style="@style/Text12BoldPrimary"
+                                android:layout_width="wrap_content"
+                                tools:text="29,000.00 INR" />
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/ViewBorderStyle"
+                            android:layout_marginVertical="@dimen/_8sdp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text12RegularBlack"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:singleLine="false"
+                                android:text="@string/total_cost_of_stay" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTotalCostOfStay"
+                                style="@style/Text12BoldPrimary"
+                                android:layout_width="wrap_content"
+                                tools:text="29,000.00 INR" />
+
+                        </LinearLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llEarnPoint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_width="wrap_content"
+                    android:text="@string/you_could_earn" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEarnPoint"
+                    style="@style/Text12MediumBlack"
+                    android:layout_width="wrap_content"
+                    android:text="400"
+                    android:layout_marginHorizontal="@dimen/_3sdp"
+                    android:textColor="@color/colorGreen" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_width="wrap_content"
+                    android:text="@string/points_with_this_booking" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnJoinNow"
+                style="@style/ButtonPrimaryStyle"
+                android:layout_margin="@dimen/_15sdp"
+                android:text="@string/join_now"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

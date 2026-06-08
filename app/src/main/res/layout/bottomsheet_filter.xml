@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dr_top_white_bg_22"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    app:behavior_hideable="true">
+
+    <View
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_3sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/dr_light_gray_bg_30"
+        android:backgroundTint="@color/colorGray" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:paddingHorizontal="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icBack"
+            style="@style/Text12RegularSecondary"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_back_black_arrow" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Text16BoldBlack"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="@string/filters" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvClearAll"
+            style="@style/Text12RegularPrimary"
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:text="@string/clear_all" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_15sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/switchOnOff"
+                    android:text="@string/show_available_hotels_only" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchOnOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:checked="false"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    app:thumbTint="@drawable/thumb_color"
+                    app:trackTint="@drawable/track_color" />
+
+            </RelativeLayout>
+
+            <View
+                style="@style/ViewLightBorderStyle"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12BoldBlack"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/hotel_type" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHotelType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/raw_hotel_type" />
+
+            <View
+                style="@style/ViewLightBorderStyle"
+                android:layout_marginTop="@dimen/_15sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12BoldBlack"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/rating" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="6"
+                tools:listitem="@layout/raw_rating" />
+
+            <View
+                style="@style/ViewLightBorderStyle"
+                android:layout_marginTop="@dimen/_15sdp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12BoldBlack"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/tvPriceRange"
+                    android:text="@string/price_range" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPriceRange"
+                    style="@style/Text10RegularPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="₹ 5800 - ₹ 12800" />
+
+            </RelativeLayout>
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/priceRangeSlider"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:valueFrom="0"
+                android:valueTo="20000"
+                app:haloColor="@android:color/transparent"
+                app:labelBehavior="gone"
+                app:thumbRadius="10dp"
+                app:thumbStrokeColor="@color/colorPrimary"
+                app:thumbStrokeWidth="2dp"
+                app:trackHeight="4dp"
+                app:values="@array/default_price_range" />
+
+
+            <!--<com.google.android.material.slider.RangeSlider
+                android:id="@+id/priceRangeSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:labelBehavior="visible"
+                app:labelStyle="@style/Tooltip" />-->
+
+            <View
+                style="@style/ViewLightBorderStyle"
+                android:layout_marginTop="@dimen/_15sdp" />
+
+            <LinearLayout
+                android:id="@+id/rlBrand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12BoldBlack"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/brand" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icBrandArrow"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:src="@drawable/ic_down_arrow_black" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBrand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="6"
+                tools:listitem="@layout/raw_filter_items" />
+
+            <View
+                style="@style/ViewLightBorderStyle"
+                android:layout_marginTop="@dimen/_15sdp" />
+
+            <LinearLayout
+                android:id="@+id/rlLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12BoldBlack"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/location" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icLocationArrow"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:src="@drawable/ic_down_arrow_black" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="6"
+                tools:listitem="@layout/raw_filter_items" />
+
+            <View
+                style="@style/ViewLightBorderStyle"
+                android:layout_marginTop="@dimen/_15sdp" />
+
+            <LinearLayout
+                android:id="@+id/rlAmenities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12BoldBlack"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/amenities" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icAmenitiesArrow"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:src="@drawable/ic_down_arrow_black" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAmenities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="2"
+                tools:listitem="@layout/raw_amenities" />
+
+            <View
+                style="@style/ViewLightBorderStyle"
+                android:layout_marginTop="@dimen/_15sdp" />
+
+            <LinearLayout
+                android:id="@+id/rlActivities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12BoldBlack"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/activities" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icActivitiesArrow"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:src="@drawable/ic_down_arrow_black" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvActivities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="6"
+                tools:listitem="@layout/raw_filter_items" />
+
+            <View
+                style="@style/ViewLightBorderStyle"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnApply"
+                style="@style/ButtonPrimaryStyle"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/apply" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

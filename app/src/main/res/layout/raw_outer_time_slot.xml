@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_3sdp"
+    android:background="@drawable/dr_white_bg_12"
+    android:elevation="@dimen/_2sdp"
+    android:orientation="vertical"
+    android:padding="@dimen/_10sdp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        style="@style/Text12RegularBlack"
+        android:layout_marginVertical="@dimen/_6sdp"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:text="Morning" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvInnerTimeSlot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
+        tools:itemCount="5"
+        tools:listitem="@layout/raw_inner_time_slot" />
+
+</LinearLayout>

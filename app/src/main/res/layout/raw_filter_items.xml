@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llFilter"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_8sdp"
+    android:layout_marginEnd="@dimen/_10sdp"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cbBrandLocationActivity"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/cb_uncheck" />
+
+    <!--Rating -->
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/ratingBar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:numStars="5"
+        android:rating="4"
+        android:visibility="gone" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/imgAmenities"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_business_center_secondary"
+        android:visibility="gone"
+        app:failureImage="@drawable/ic_placeholder_square"
+        app:failureImageScaleType="fitXY"
+        app:placeholderImage="@drawable/ic_placeholder_square"
+        app:placeholderImageScaleType="fitXY" />
+
+    <!--Bran -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBrandName"
+        style="@style/Text10RegularBlack"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:maxLines="2"
+        android:singleLine="false"
+        android:text="Hotel Royal Orchid"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDescription"
+        style="@style/Text10RegularGray"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:text="(Hotel Royal Orchid)"
+        android:visibility="gone" />
+
+</LinearLayout>

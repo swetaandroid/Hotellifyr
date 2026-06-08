@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvNewlyOpened"
+    android:layout_width="@dimen/_130sdp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_2sdp"
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/_15sdp"
+    app:cardElevation="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+            <com.xongolab.hotellifyr.custom.RoundableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cornerLeftTop="@dimen/_20sdp"
+                app:cornerRightTop="@dimen/_20sdp">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/imgNewlyOpen"
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    android:scaleType="fitXY"
+                    app:actualImageResource="@drawable/img_hotel_detail"
+                    app:roundTopEnd="false"
+                    app:roundTopLeft="false"
+                    app:roundedCornerRadius="@dimen/_20sdp" />
+
+            </com.xongolab.hotellifyr.custom.RoundableLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/Text12MediumBlack"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:text="Royal Orchid Beach Resort &amp; Spa, Jaipur" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:src="@drawable/ic_location_primary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLocation"
+                    style="@style/Text10RegularPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:text="Jaipur" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:background="@drawable/ic_discount_badge">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text10BoldBlack"
+                android:layout_width="wrap_content"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:singleLine="false"
+                android:text="50% off"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
+
+    <!--<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        android:id="@+id/cvNewlyOpened"
+          app:cardCornerRadius="@dimen/_15sdp"
+        android:background="@drawable/dr_round_corner_white_15"
+        android:elevation="@dimen/_3sdp"
+        android:orientation="vertical"
+        app:cardCornerRadius="@dimen/_15sdp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgNewlyOpen"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_hotel_detail" />
+
+            <RelativeLayout
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/ic_offer_yellow">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text10BoldBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="50% off" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/Text12MediumBlack"
+                android:layout_below="@id/imgNewlyOpen"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:text="Royal Orchid Beach Resort &amp; Spa, Goa" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTitle"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_location_primary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLocation"
+                    style="@style/Text12RegularPrimary"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:text="Kerala" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>-->

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dr_top_white_bg_15"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rlToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            style="@style/Text14BoldBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="@string/primary_guest_details" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivClose"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_5sdp"
+            app:srcCompat="@drawable/ic_close_black" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/ViewBorderStyle"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_20sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_15sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_gravity="center_vertical"
+                android:text="@string/first_name"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtFirstName"
+                style="@style/EditTextParentStyle"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/dr_light_gray_bg"
+                android:hint="@string/hint_enter_first_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/last_name"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtLastName"
+                style="@style/EditTextParentStyle"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/dr_light_gray_bg"
+                android:hint="@string/hint_enter_last_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/email_address"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtEmailId"
+                style="@style/EditTextParentStyle"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/dr_light_gray_bg"
+                android:hint="@string/hint_enter_email_id"
+                android:inputType="textEmailAddress" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/mobile_number"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/mobileLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/dr_light_gray_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_12sdp">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:elevation="@dimen/_5sdp"
+                    android:focusable="true"
+                    app:ccpDialog_backgroundColor="@color/colorWhite"
+                    app:ccp_clickable="true"
+                    app:ccp_contentColor="@color/colorBlack"
+                    app:ccp_padding="0dp"
+                    app:ccp_showArrow="false"
+                    app:ccp_showFlag="false"
+                    app:ccp_showNameCode="false"
+                    app:ccp_textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtPhoneNumber"
+                    style="@style/EditTextParentStyle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/hint_enter_mobile_number"
+                    android:imeOptions="actionGo"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/gst_number_optional"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtGSTNumber"
+                style="@style/EditTextParentStyle"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/dr_light_gray_bg"
+                android:hint="@string/enter_gst_number" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/special_request"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtSpecialRequest"
+                style="@style/EditTextParentStyle"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/dr_light_gray_bg"
+                android:gravity="top"
+                android:hint="@string/write_special_request"
+                android:maxLines="5" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/termsConditionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mobileLayout">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivAgree"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/cb_uncheck"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAgreeTerms"
+                    style="@style/Text12RegularBlack"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:singleLine="false"
+                    android:text="I have read and agree to the Privacy Policy and Terms &amp; Conditions."
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivAgree"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnSubmit"
+                style="@style/ButtonPrimaryStyle"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="@string/confirm_booking" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

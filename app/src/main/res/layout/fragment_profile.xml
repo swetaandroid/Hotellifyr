@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorF1F1F1"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/m3_bottom_nav_min_height"
+    tools:context=".view.fragment.ProfileFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                android:src="@drawable/img_header_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_30sdp"
+                    android:paddingBottom="@dimen/_15sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btnBack"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_alignParentStart="true"
+                        android:padding="@dimen/_8sdp"
+                        android:src="@drawable/ic_back_white_arrow" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/toolbarTitle"
+                        style="@style/Text14MediumWhite"
+                        android:layout_width="wrap_content"
+                        android:layout_alignTop="@id/btnBack"
+                        android:layout_alignBottom="@id/btnBack"
+                        android:layout_centerInParent="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/account" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/icSetting"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_alignParentEnd="true"
+                        android:padding="@dimen/_8sdp"
+                        android:src="@drawable/ic_setting_white" />
+
+                </RelativeLayout>
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/llDiscover"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvCurrentTier"
+                                style="@style/Text14BoldWhite"
+                                android:gravity="center"
+                                android:text="@string/discoverer" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvAvailablePoints"
+                                style="@style/Text24BoldWhite"
+                                android:layout_marginHorizontal="@dimen/_15sdp"
+                                android:gravity="center"
+                                tools:text="24,587" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text12RegularOutLine"
+                                android:layout_marginHorizontal="@dimen/_15sdp"
+                                android:layout_marginBottom="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="@string/earned_reward_points" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorF1F1F1"
+                                android:orientation="vertical"
+                                android:paddingBottom="@dimen/_20sdp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/_15sdp"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        style="@style/Text12MediumBlack"
+                                        android:layout_width="match_parent"
+                                        android:layout_marginEnd="@dimen/_5sdp"
+                                        android:layout_marginBottom="@dimen/_2sdp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/dr_white_bottom_bg_10"
+                                        android:elevation="@dimen/_2sdp"
+                                        android:gravity="center"
+                                        android:padding="@dimen/_15sdp"
+                                        android:text="@string/status_points" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        style="@style/Text12MediumBlack"
+                                        android:layout_width="match_parent"
+                                        android:layout_marginStart="@dimen/_5sdp"
+                                        android:layout_marginBottom="@dimen/_2sdp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/dr_white_bottom_bg_10"
+                                        android:elevation="@dimen/_2sdp"
+                                        android:gravity="center"
+                                        android:padding="@dimen/_15sdp"
+                                        android:text="@string/nights" />
+
+                                </LinearLayout>
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/cvViewAllOffer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_125sdp"
+                                    android:layout_margin="@dimen/_15sdp"
+                                    android:visibility="gone"
+                                    app:cardCornerRadius="@dimen/_15sdp">
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/imgOffer"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/img_hotel_detail" />
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/imgPromotionImage"
+                                            android:layout_width="@dimen/_15sdp"
+                                            android:layout_height="@dimen/_15sdp"
+                                            android:layout_above="@id/tvGetDetail"
+                                            android:layout_marginHorizontal="@dimen/_10sdp"
+                                            android:layout_marginBottom="@dimen/_5sdp"
+                                            android:src="@drawable/img_promotion_offers"
+                                            android:text="@string/big_saving_deal" />
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:id="@+id/tvGetDetail"
+                                            style="@style/Text12RegularWhite"
+                                            android:layout_alignParentBottom="true"
+                                            android:layout_marginHorizontal="@dimen/_10sdp"
+                                            android:layout_marginBottom="@dimen/_10sdp"
+                                            android:text="@string/get_details" />
+
+                                    </RelativeLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/Text12RegularGray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/_15sdp"
+                                    android:layout_marginTop="@dimen/_15sdp"
+                                    android:text="@string/vouchers" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvCurrentOffer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/_15sdp"
+                                    android:clipToPadding="false"
+                                    android:orientation="horizontal"
+                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                    tools:itemCount="3"
+                                    tools:listitem="@layout/raw_current_offer" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/Text12RegularGray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_15sdp"
+                                    android:text="@string/program_benefits"
+                                    android:visibility="gone" />
+
+                                <RelativeLayout
+                                    android:id="@+id/rlMemberLevel"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/_15sdp"
+                                    android:visibility="gone">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        style="@style/Text12RegularBlack"
+                                        android:layout_width="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:text="@string/member_level_benefits" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/icArrowMemberLevel"
+                                        android:layout_width="@dimen/_20sdp"
+                                        android:layout_height="@dimen/_20sdp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:src="@drawable/ic_gray_back_arrow" />
+
+                                </RelativeLayout>
+
+                                <View
+                                    style="@style/ViewBorderStyle"
+                                    android:layout_margin="@dimen/_15sdp"
+                                    android:visibility="gone" />
+
+                                <RelativeLayout
+                                    android:id="@+id/rlEarnPoints"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/_15sdp"
+                                    android:visibility="gone">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        style="@style/Text12RegularBlack"
+                                        android:layout_width="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:text="@string/earn_points" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/icArrowEarnPoints"
+                                        android:layout_width="@dimen/_20sdp"
+                                        android:layout_height="@dimen/_20sdp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:src="@drawable/ic_gray_back_arrow" />
+
+                                </RelativeLayout>
+
+                                <View
+                                    style="@style/ViewBorderStyle"
+                                    android:layout_margin="@dimen/_15sdp"
+                                    android:visibility="gone" />
+
+                                <RelativeLayout
+                                    android:id="@+id/rlRedeemPoints"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/_15sdp"
+
+                                    android:visibility="gone">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        style="@style/Text12RegularBlack"
+                                        android:layout_width="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:text="@string/redeem_points" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/icArrowRedeemPoints"
+                                        android:layout_width="@dimen/_20sdp"
+                                        android:layout_height="@dimen/_20sdp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:src="@drawable/ic_gray_back_arrow" />
+
+                                </RelativeLayout>
+
+                                <View
+                                    style="@style/ViewBorderStyle"
+                                    android:layout_margin="@dimen/_15sdp"
+                                    android:visibility="gone" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/Text12MediumBlack"
+                                    android:layout_marginHorizontal="@dimen/_15sdp"
+                                    android:text="@string/maintain_your_points"
+                                    android:visibility="gone" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/Text12RegularBlack"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/_15sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:singleLine="false"
+                                    android:text=""
+                                    android:visibility="gone" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

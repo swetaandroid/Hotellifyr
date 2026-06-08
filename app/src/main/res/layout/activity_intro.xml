@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:paddingBottom="@dimen/_20sdp"
+    tools:context=".view.activity.intro.IntroActivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/introViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_250sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:dotsClickable="false"
+        app:dotsColor="@color/colorWhiteTrans20"
+        app:dotsSize="@dimen/_10sdp"
+        app:dotsSpacing="@dimen/_3sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/introViewPager"
+        app:selectedDotColor="@color/colorSecondary" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnContinueAsGuest"
+        style="@style/Text14MediumSecondary"
+        android:layout_width="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:text="@string/continue_as_guest"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnNext"
+        style="@style/ButtonPrimaryStyle"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:text="@string/next"
+        app:layout_constraintBottom_toTopOf="@+id/btnContinueAsGuest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvIntroDesc"
+        style="@style/Text12RegularGray"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:gravity="center"
+        android:singleLine="false"
+        android:text="@string/find_your_hotel_easily_and_travel_anywhere_you_want_with_us"
+        app:layout_constraintBottom_toTopOf="@+id/btnNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvIntroTitle"
+        style="@style/Text16RegularBlack"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:gravity="center"
+        android:singleLine="false"
+        android:text="@string/effortless_bookings_for_leisure_travel_or_business"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintBottom_toTopOf="@+id/tvIntroDesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

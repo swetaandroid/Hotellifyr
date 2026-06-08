@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/_10sdp">
+
+    <androidx.appcompat.widget.AppCompatRadioButton
+        android:id="@+id/radioSort"
+        style="@style/Text12MediumBlack"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/radio_button_selector"
+        android:button="@null"
+        android:clickable="false" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSort"
+        style="@style/Text12RegularBlack"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/radioSort"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:text="Distance" />
+
+</RelativeLayout>

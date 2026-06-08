@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_200sdp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_7sdp"
+    android:elevation="0dp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardCornerRadius="@dimen/_20sdp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/ivProfile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:scaleType="fitXY"
+            app:actualImageResource="@drawable/ic_relevant_1"
+            app:roundedCornerRadius="@dimen/_20sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/Text12MediumBlack"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:maxLines="2"
+            android:singleLine="false"
+            android:text="Royal Orchid Beach Resort &amp; Spa, Goa" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:src="@drawable/ic_guests" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGuest"
+                style="@style/Text10RegularGray"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="4 Guests" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/ic_bedrooms" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBedroom"
+                style="@style/Text10RegularGray"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="2 Bedrooms" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:src="@drawable/ic_baths" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBath"
+                style="@style/Text10RegularGray"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="2 Baths" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPrice"
+                style="@style/Text14MediumSecondary"
+                android:layout_width="wrap_content"
+                android:text="₹ 12,500" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/night" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

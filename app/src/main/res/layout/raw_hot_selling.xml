@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_200sdp"
+    android:layout_height="@dimen/_200sdp"
+    android:layout_margin="@dimen/_7sdp"
+    android:elevation="0dp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardCornerRadius="@dimen/_20sdp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/ivIcon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:actualImageResource="@drawable/ic_hot_selling_1"
+            app:failureImage="@drawable/ic_placeholder_square"
+            app:failureImageScaleType="fitXY"
+            app:placeholderImage="@drawable/ic_placeholder_square"
+            app:placeholderImageScaleType="fitXY"
+            app:roundedCornerRadius="@dimen/_20sdp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dr_top_gradient_transparent_15" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOffer"
+            style="@style/Text12MediumWhite"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/dr_offer_with_border_bg"
+            android:maxLines="2"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_5sdp"
+            android:singleLine="false"
+            android:text="10 %"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitle"
+                    style="@style/Text12MediumWhite"
+                    android:maxLines="2"
+                    android:singleLine="false"
+                    android:text="Royal Orchid Beach Resort &amp; Spa, Goa" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBookNow"
+                    style="@style/Text10RegularWhite"
+                    android:paddingTop="@dimen/_6sdp"
+                    android:singleLine="false"
+                    android:text="@string/book_now" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:src="@drawable/ic_right_arrow" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

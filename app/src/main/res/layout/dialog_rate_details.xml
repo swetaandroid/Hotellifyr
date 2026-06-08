@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dr_white_bg_15"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/_15sdp">
+
+    <RelativeLayout
+        android:id="@+id/rlToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Text16BoldBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="@string/rate_details" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivClose"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_5sdp"
+            app:srcCompat="@drawable/ic_close_black" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/ViewLightBorderStyle"
+        android:layout_marginVertical="@dimen/_10sdp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_15sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            style="@style/Text14MediumBlack"
+            android:text="@string/signature_suite" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Text12MediumBlack"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="@string/member_rate" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Text12RegularBlack"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/rate_description" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="4"
+            tools:listitem="@layout/raw_rate_description" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Text12RegularBlack"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/cancellation_policy" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCancellationPolicy"
+            style="@style/Text10RegularGray"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:singleLine="false"
+            android:text="@string/free_cancellation_by_2_pm_3_days_prior_to_arrival_to_avoid_a_penalty_of_1_night_charge_plus_any_applicable_taxes_amp_fees" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Text12RegularBlack"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/guarantee_policy" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGuaranteePolicy"
+            style="@style/Text10RegularGray"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:singleLine="false"
+            android:text="@string/reservations_must_be_guaranteed_by_credit_card_and_a_tokenization_will_be_done_via_the_payment_gateway" />
+
+    </LinearLayout>
+
+</LinearLayout>

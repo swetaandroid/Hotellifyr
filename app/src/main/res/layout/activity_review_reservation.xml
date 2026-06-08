@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/_15sdp"
+    tools:context=".view.activity.home.ReviewReservationActivity">
+
+    <com.xongolab.hotellifyr.custom.RoundableLayout
+        android:id="@+id/roundLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:cornerLeftBottom="@dimen/_30sdp"
+        app:cornerRightBottom="@dimen/_30sdp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:padding="@dimen/_15sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btnBack"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/ic_back_black_arrow" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/toolbarTitle"
+                        style="@style/Text14MediumBlack"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/review_reservation" />
+
+                    <View
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/toolbarDesc"
+                    style="@style/Text12MediumGray"
+                    android:layout_marginHorizontal="@dimen/_30sdp"
+                    android:gravity="center"
+                    android:singleLine="false"
+                    android:text="Royal Orchid Beach Resort &amp; Spa, Goa" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </com.xongolab.hotellifyr.custom.RoundableLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/llButton"
+        android:layout_below="@+id/roundLayout"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_30sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dr_white_bg_15"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvReservationRoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/raw_reservation_room" />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text12BoldBlack"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:singleLine="false"
+                            android:text="@string/pricing_breakdown" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvRateDetails"
+                            style="@style/Text12BoldPrimary"
+                            android:layout_width="wrap_content"
+                            android:text="@string/rate_details"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <View
+                        style="@style/ViewBorderStyle"
+                        android:layout_marginVertical="@dimen/_10sdp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvStandardRateTitle"
+                            style="@style/Text12RegularBlack"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:singleLine="false"
+                            tools:text="Standard Rate (2 night)" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvStandardRate"
+                            style="@style/Text12MediumPrimary"
+                            android:layout_width="wrap_content"
+                            tools:text="29,000.00 INR" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text12RegularBlack"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:singleLine="false"
+                            android:text="@string/taxes_and_fees" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvTotalTax"
+                            style="@style/Text12MediumPrimary"
+                            android:layout_width="wrap_content"
+                            tools:text="2,160.00 INR" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvAddOnPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/raw_add_on" />
+
+                    <LinearLayout
+                        android:id="@+id/llAirportConfirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvAirPort"
+                            style="@style/Text12RegularBlack"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:singleLine="false"
+                            android:text="Airport Pickup" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvAirportPrice"
+                            style="@style/Text12MediumPrimary"
+                            android:layout_width="wrap_content"
+                            tools:text="3,500.00 INR" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llPromoConfirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvPromo"
+                            style="@style/Text12RegularBlack"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:singleLine="false"
+                            android:text="@string/promo_code" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvPromoCodePrice"
+                            style="@style/Text12MediumPrimary"
+                            android:layout_width="wrap_content"
+                            tools:text="3,500.00 INR" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text12BoldBlack"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:singleLine="false"
+                            android:text="@string/total_stay" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvTotalCostOfStay"
+                            style="@style/Text12BoldPrimary"
+                            android:layout_width="wrap_content"
+                            tools:text="34,660.00 INR" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:id="@+id/llAddOnsExperience"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text13MediumBlack"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:singleLine="false"
+                            android:text="@string/add_ons_experience" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivExperienceArrow"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:padding="@dimen/_2sdp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_down_arrow_black" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/expandAddOnsExperience"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            style="@style/ViewBorderStyle"
+                            android:layout_marginVertical="@dimen/_10sdp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvAddOnsExperience"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/raw_add_ons_experience" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvSelectedAddOnsExperience"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/raw_selected_add_ons_experience" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text13MediumBlack"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:singleLine="false"
+                            android:text="@string/airport_pick" />
+
+                        <!--   android:button="@drawable/switch_bg_2"  -->
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switchAirportPick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:width="@dimen/_45sdp"
+                            android:height="@dimen/_20sdp"
+                            android:background="@null"
+                            android:button="@drawable/switch_bg"
+                            android:minWidth="0dp"
+                            android:minHeight="0dp"
+                            android:padding="0dp"
+                            android:thumb="@null"
+                            android:visibility="visible"
+                            app:track="@null" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/expandAirportPick"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            style="@style/ViewBorderStyle"
+                            android:layout_marginVertical="@dimen/_10sdp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvAirportPick"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/raw_airport_pick" />
+
+                        <LinearLayout
+                            android:id="@+id/llAirportPickupInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text12BoldBlack"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:singleLine="false"
+                                android:text="Pickup Information" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text12RegularBlack"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:singleLine="false"
+                                android:text="@string/how_many_passengers" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edtNoOfPassenger"
+                                style="@style/Text12RegularBlack"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@drawable/dr_light_gray_bg_30"
+                                android:hint="@string/enter_how_many_passengers"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:paddingHorizontal="@dimen/_15sdp"
+                                android:paddingVertical="@dimen/_10sdp"
+                                android:textColorHint="@color/colorGray" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text12RegularBlack"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:singleLine="false"
+                                android:text="@string/from" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edtFromDestination"
+                                style="@style/Text12RegularBlack"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@drawable/dr_light_gray_bg_30"
+                                android:hint="@string/enter_from_destination"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"
+                                android:paddingHorizontal="@dimen/_15sdp"
+                                android:paddingVertical="@dimen/_10sdp"
+                                android:textColorHint="@color/colorGray" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text12RegularBlack"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:singleLine="false"
+                                android:text="@string/flight_date_and_time" />
+
+                            <LinearLayout
+                                android:id="@+id/llFlightDateTime"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@drawable/dr_light_gray_bg_30"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="@dimen/_15sdp"
+                                android:paddingVertical="@dimen/_10sdp"
+                                android:textColorHint="@color/colorGray">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvFlightDateTime"
+                                    style="@style/Text12RegularBlack"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="dd/mm/yyyy hh:mm am" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ivFlightDateTime"
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:src="@drawable/ic_calendar_primary" />
+
+                            </LinearLayout>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text12RegularBlack"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:singleLine="false"
+                                android:text="@string/flight_number" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edtFlightNumber"
+                                style="@style/Text12RegularBlack"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@drawable/dr_light_gray_bg_30"
+                                android:hint="@string/enter_flight_number"
+                                android:imeOptions="actionDone"
+                                android:inputType="text"
+                                android:maxLength="20"
+                                android:paddingHorizontal="@dimen/_15sdp"
+                                android:paddingVertical="@dimen/_10sdp"
+                                android:textColorHint="@color/colorGray" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/btnSave"
+                                style="@style/Text12BoldWhite"
+                                android:layout_width="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@drawable/dr_primary_bg_10"
+                                android:paddingHorizontal="@dimen/_50sdp"
+                                android:paddingVertical="@dimen/_10sdp"
+                                android:text="@string/save" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--            Payment Option   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvPaymentOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:visibility="visible"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:id="@+id/llPaymentOption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text13MediumBlack"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:singleLine="false"
+                            android:text="@string/payment_option" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivPaymentArrow"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:padding="@dimen/_2sdp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_down_arrow_black" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/expandPaymentOption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            style="@style/ViewBorderStyle"
+                            android:layout_marginVertical="@dimen/_10sdp" />
+
+                        <RadioGroup
+                            android:id="@+id/paymentRadioGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:id="@+id/rbPayAtHotel"
+                                style="@style/Text12MediumBlack"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:minHeight="0dp"
+                                android:text="@string/pay_at_hotel" />
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:id="@+id/rbPayNow"
+                                style="@style/Text12MediumBlack"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:minHeight="0dp"
+                                android:text="@string/pay_now" />
+
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:id="@+id/llPaymentMethod"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvAddCard"
+                                style="@style/Text12RegularPrimary"
+                                android:layout_width="wrap_content"
+                                android:text="@string/add_card" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvPaymentMethod"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:nestedScrollingEnabled="false"
+                                android:orientation="vertical"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                tools:itemCount="3"
+                                tools:listitem="@layout/raw_payment_method" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:id="@+id/llPromoCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text13MediumBlack"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:singleLine="false"
+                            android:text="@string/use_promo_code" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivPromoCodeArrow"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:padding="@dimen/_2sdp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_down_arrow_black" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/expandPromoCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            style="@style/ViewBorderStyle"
+                            android:layout_marginVertical="@dimen/_10sdp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/dr_gray_border_10"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/_15sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:visibility="gone">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text12RegularBlack"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:singleLine="false"
+                                android:text="@string/group_code" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:padding="@dimen/_2sdp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_down_arrow_black" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/dr_gray_border_10"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/_15sdp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edtPromoCode"
+                                style="@style/Text12RegularBlack"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:hint="@string/enter_promo_code"
+                                android:paddingVertical="@dimen/_10sdp"
+                                android:singleLine="false"
+                                android:textColorHint="@color/colorBlack" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/btnPromoAdd"
+                                style="@style/Text10RegularWhite"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/dr_primary_bg_6"
+                                android:paddingHorizontal="@dimen/_15sdp"
+                                android:paddingVertical="@dimen/_5sdp"
+                                android:text="@string/add" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llPromoApplied"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/dr_gray_border_10"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/_15sdp"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingVertical="@dimen/_10sdp">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvPromoPrice"
+                                    style="@style/Text12RegularPrimary"
+                                    android:layout_width="wrap_content"
+                                    android:singleLine="false"
+                                    tools:text="2,458.00 INR" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvPromoCode"
+                                    style="@style/Text9RegularBlack"
+                                    android:layout_width="wrap_content"
+                                    android:layout_marginStart="@dimen/_2sdp"
+                                    android:singleLine="false"
+                                    tools:text="(GROUP3050)" />
+
+                            </LinearLayout>
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btnDeletePromo"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:src="@drawable/ic_delete" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!--            TODO ::: GONE   -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:visibility="visible"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Text12BoldBlack"
+                        android:layout_width="wrap_content"
+                        android:singleLine="false"
+                        android:text="@string/additional_charges" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAdditionalChargeDesc"
+                        style="@style/Text10RegularBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:singleLine="false"
+                        android:text="@string/additional_charge_desc" />
+
+                    <View
+                        style="@style/ViewBorderStyle"
+                        android:layout_marginVertical="@dimen/_10sdp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Text12BoldBlack"
+                        android:layout_width="wrap_content"
+                        android:singleLine="false"
+                        android:text="@string/modifying_your_reservation" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvModifyingReservationDesc"
+                        style="@style/Text10RegularBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:singleLine="false"
+                        android:text="@string/modifying_reservation_desc_review_reservation" />
+
+                    <View
+                        style="@style/ViewBorderStyle"
+                        android:layout_marginVertical="@dimen/_10sdp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Text12BoldBlack"
+                        android:layout_width="wrap_content"
+                        android:singleLine="false"
+                        android:text="@string/hotel_messages" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvHotelMsgDesc"
+                        style="@style/Text10RegularBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:singleLine="false"
+                        android:text="@string/hotel_message_desc" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--            TODO ::: GONE   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvWiFi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:visibility="visible"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text12BoldBlack"
+                            android:layout_width="wrap_content"
+                            android:singleLine="false"
+                            android:text="@string/free_wifi_digital_check_in_other_exclusive_member_benefits" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text10RegularBlack"
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:singleLine="false"
+                            android:text="@string/instantly_join_regenta_rewards_and_enjoy_the_perks_with_easch_stay_n_in_room_wi_fi_internet_access_may_not_be_complimentary_at_properties_with_a_resort_charge" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivAgree"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/ic_radio_unselect" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAgreeTerms"
+                    style="@style/Text12RegularBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:singleLine="false"
+                    android:text="@string/i_agree_to_the_privacy_policy_and_booking_terms_and_conditions" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/llButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:background="@drawable/dr_black_bg_10"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:paddingVertical="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTotalPayAmount"
+                style="@style/Text16RegularWhite"
+                android:layout_width="wrap_content"
+                android:singleLine="false"
+                tools:text="34,660.00" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text10RegularGray"
+                android:layout_width="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/inr"
+                android:textColor="@color/colorOutLine"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnBookNow"
+            style="@style/Text12BoldBlack"
+            android:layout_width="wrap_content"
+            android:background="@drawable/dr_white_bg_6"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_6sdp"
+            android:text="@string/book_now" />
+
+    </LinearLayout>
+
+</RelativeLayout>

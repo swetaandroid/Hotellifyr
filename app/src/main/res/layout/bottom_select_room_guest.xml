@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llNoData"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/_15sdp"
+    app:behavior_hideable="true"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <RelativeLayout
+        android:id="@+id/rlToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Text14MediumBlack"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/room_guests" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivClose"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentEnd="true"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_close" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnApply"
+        android:layout_below="@id/rlToolBar"
+        android:layout_marginTop="@dimen/_15sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_gravity="center_vertical"
+                android:text="@string/room_guests" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/dr_light_gray_bg"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_15sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTotal"
+                    style="@style/Text12RegularBlack"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:layout_weight="1"
+                    android:text="1 Room, 1 Guest" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvClear"
+                    style="@style/Text12RegularPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clear" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:text="@string/maximum_6_total_guests_per_room" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:text="@string/rooms" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivMinusRooms"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_minus_secondary" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvRooms"
+                        style="@style/Text12RegularBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivPlusRooms"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_plus_secondary" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                style="@style/ViewBorderStyle"
+                android:layout_marginTop="@dimen/_20sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:text="@string/adults_per_room" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivMinusAdults"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_minus_secondary" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAdults"
+                        style="@style/Text12RegularBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivPlusAdults"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_plus_secondary" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                style="@style/ViewBorderStyle"
+                android:layout_marginTop="@dimen/_15sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:text="@string/children_per_room" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivMinusChildren"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_minus_secondary" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvChildren"
+                        style="@style/Text12RegularBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivPlusChildren"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_plus_secondary" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                style="@style/ViewBorderStyle"
+                android:layout_marginTop="@dimen/_15sdp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvGuestPerRoom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="4"
+                tools:listitem="@layout/raw_guests_per_room" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnApply"
+        style="@style/ButtonPrimaryStyle"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_15sdp"
+        android:text="@string/apply" />
+
+
+</RelativeLayout>

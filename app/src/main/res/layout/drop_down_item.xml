@@ -1,0 +1,10 @@
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drop_down_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="end"
+    android:fontFamily="@font/product_sans_regular"
+    android:maxLines="1"
+    android:padding="@dimen/_10sdp"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+    android:textColor="@color/colorBlack" />

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".view.activity.home.HotelBookOtpActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:src="@drawable/ic_bottom_bg"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_30sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/ic_new_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/Text16BoldBlack"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:singleLine="false"
+                android:text="@string/verify_and_confirm_booking"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHotelName"
+                style="@style/Text14MediumSecondary"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:singleLine="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                tools:text="Royal Orchid" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDateRange"
+                style="@style/Text14RegularBlack"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:singleLine="false"
+                android:text="Thu, 23 Mar - Sun, 30 Mar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHotelName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOTPDesc"
+                style="@style/Text12RegularGray"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:singleLine="false"
+                android:text="A verification code has been sent to your mobile number."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDateRange" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOTPSubDesc"
+                style="@style/Text12RegularGray"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="@string/please_enter_the_code_below_to_confirm_your_booking"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOTPDesc" />
+
+            <com.mukeshsolanki.OtpView
+                android:id="@+id/otpView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:autofillHints="-"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:itemBackground="@drawable/dr_light_gray_bg"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_14ssp"
+                app:OtpHideLineWhenFilled="true"
+                app:OtpItemCount="6"
+                app:OtpItemHeight="@dimen/_40sdp"
+                app:OtpItemSpacing="@dimen/_8sdp"
+                app:OtpItemWidth="@dimen/_32sdp"
+                app:OtpLineColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOTPSubDesc" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnContinue"
+                style="@style/ButtonPrimaryStyle"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/verify_and_confirm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/otpView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvResendOtp"
+                style="@style/Text12RegularBlack"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:singleLine="false"
+                android:text="@string/did_not_get_the_code_resend_it"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnContinue" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

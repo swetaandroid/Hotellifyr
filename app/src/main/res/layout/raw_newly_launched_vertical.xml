@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_160sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:elevation="0dp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardCornerRadius="@dimen/_15sdp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/ivIcon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:failureImage="@drawable/ic_placeholder_rectangle"
+            app:failureImageScaleType="fitXY"
+            app:placeholderImage="@drawable/ic_placeholder_rectangle"
+            app:placeholderImageScaleType="fitXY"
+            app:roundedCornerRadius="@dimen/_15sdp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dr_top_gradient_transparent_15" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOffer"
+            style="@style/Text12MediumWhite"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/dr_offer_with_border_bg"
+            android:maxLines="2"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_5sdp"
+            android:singleLine="false"
+            android:text="10 %"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/Text12MediumWhite"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_15sdp"
+            android:background="@drawable/dr_white_bg_30"
+            android:backgroundTint="@color/colorWhiteLight"
+            android:gravity="center"
+            android:maxLines="2"
+            android:padding="@dimen/_3sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:singleLine="false"
+            android:text="Royal Orchid Beach Resort &amp; Spa, Goa" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

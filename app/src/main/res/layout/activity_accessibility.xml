@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.account.AccessibilityActivity">
+
+    <include
+        android:id="@+id/layoutToolBar"
+        layout="@layout/normal_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="@dimen/_8sdp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPreferences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnSave"
+        android:layout_below="@id/layoutToolBar"
+        android:orientation="vertical"
+        android:padding="@dimen/_15sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="4"
+        tools:listitem="@layout/raw_preferences" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnSave"
+        style="@style/ButtonPrimaryStyle"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:text="@string/save" />
+
+</RelativeLayout>

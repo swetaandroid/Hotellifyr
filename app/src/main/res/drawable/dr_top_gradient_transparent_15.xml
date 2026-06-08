@@ -1,0 +1,12 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Gradient from transparent to black -->
+    <gradient
+        android:angle="270"
+        android:endColor="#CC000000"
+        android:startColor="#00000000" />
+
+    <!-- Rounded corners -->
+    <corners android:radius="@dimen/_15sdp" />
+
+</shape>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activity.account.InterestActivity">
+
+    <include
+        android:id="@+id/layoutToolBar"
+        layout="@layout/normal_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="@dimen/_8sdp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btnSave"
+            android:layout_below="@id/layoutToolBar"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:singleLine="false"
+                android:text="@string/interest_desc" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularBlack"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/sports_wellness" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSportsWellness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="4"
+                tools:listitem="@layout/raw_filter_items" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/dr_white_fill_gray_border_25"
+                android:padding="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/tvAdd"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="@string/sports_wellness" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAdd"
+                    style="@style/Text12RegularWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/dr_primary_bg_25"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_2sdp"
+                    android:text="@string/add" />
+
+            </RelativeLayout>
+
+            <View
+                style="@style/ViewBorderStyle"
+                android:layout_marginVertical="@dimen/_10sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularBlack"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/arts_culture" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvArtsCulture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="4"
+                tools:listitem="@layout/raw_filter_items" />
+
+            <View
+                style="@style/ViewBorderStyle"
+                android:layout_marginVertical="@dimen/_10sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularBlack"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/lifestyle" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvLifestyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="4"
+                tools:listitem="@layout/raw_filter_items" />
+
+            <View
+                style="@style/ViewBorderStyle"
+                android:layout_marginVertical="@dimen/_10sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnSave"
+                style="@style/ButtonParentStyle"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/save" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

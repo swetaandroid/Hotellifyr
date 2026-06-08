@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activity.account.SettingActivity">
+
+    <include
+        android:id="@+id/layoutToolBar"
+        layout="@layout/normal_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_8sdp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:paddingTop="@dimen/_15sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:text="@string/profile_details" />
+
+            <RelativeLayout
+                android:id="@+id/rlPersonalInformation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/personal_information" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icArrowPersonalInfo"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_gray_back_arrow" />
+
+            </RelativeLayout>
+
+            <View style="@style/ViewBorderStyle" />
+
+            <RelativeLayout
+                android:id="@+id/rlPaymentMethod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/payment_method" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icArrowPaymentMethod"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_gray_back_arrow" />
+
+            </RelativeLayout>
+
+            <View
+                style="@style/ViewBorderStyle"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/history" />
+
+            <RelativeLayout
+                android:id="@+id/rlTransactionHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/transaction_history" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icArrowTransactionHistory"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_gray_back_arrow" />
+
+            </RelativeLayout>
+
+            <View
+                style="@style/ViewBorderStyle"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/rlBookingHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/booking_history" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icArrowBookingHistory"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_gray_back_arrow" />
+
+            </RelativeLayout>
+
+            <View style="@style/ViewBorderStyle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMyPreferencesTitle"
+                style="@style/Text12RegularGray"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/my_preferences" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMyPreferences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/raw_my_preferences" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text10RegularGray"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="@string/settings_desc"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLogout"
+                style="@style/Text14BoldSecondary"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="@dimen/_20sdp"
+                android:paddingBottom="@dimen/_15sdp"
+                android:text="@string/logout" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

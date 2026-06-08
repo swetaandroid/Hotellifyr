@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_5sdp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/Text12BoldBlack"
+                android:singleLine="false"
+                android:text="@string/member_rate" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPrice"
+                    style="@style/Text14MediumPrimary"
+                    android:layout_width="wrap_content"
+                    android:text="₹ 12,500" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text9RegularBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:text="@string/inr_night" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text10RegularGray"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="14,500 INR"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text10RegularGray"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="Taxes &amp; fees included" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRateDetails"
+                style="@style/Text10RegularPrimary"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:singleLine="false"
+                android:text="@string/rate_details" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnSelectRoom"
+            style="@style/Text10BoldWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@drawable/dr_primary_bg_6"
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:text="@string/select_room" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@color/shimmer_placeholder" />
+
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlInnerTimeSlot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_5sdp"
+    android:layout_marginVertical="@dimen/_6sdp"
+    android:background="@drawable/dr_white_fill_gray_border_10"
+    android:paddingHorizontal="@dimen/_6sdp"
+    android:paddingVertical="@dimen/_12sdp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTime"
+        style="@style/Text12RegularBlack"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal"
+        android:text="09:30 am" />
+
+</RelativeLayout>

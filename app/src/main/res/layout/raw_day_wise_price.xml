@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_2sdp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDay"
+        style="@style/Text10RegularGray"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="@dimen/_6sdp"
+        tools:text="Price" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPrice"
+        style="@style/Text10RegularPrimary"
+        android:layout_width="wrap_content"
+        tools:text="29,000.00 INR" />
+
+</LinearLayout>

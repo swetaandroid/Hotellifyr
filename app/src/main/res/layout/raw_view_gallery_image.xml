@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlViewGallery"
+    android:layout_width="@dimen/_80sdp"
+    android:layout_height="@dimen/_80sdp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageGallery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_gallery" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dr_white_transparent_bg"
+        android:visibility="gone" />
+
+</RelativeLayout>

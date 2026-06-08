@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:context=".view.activity.home.search.hotel.BookEventBanquetActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_gravity="center_vertical"
+                android:text="@string/first_name" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtFirstName"
+                style="@style/EditTextParentStyle"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/dr_light_gray_bg" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/last_name" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtLastName"
+                style="@style/EditTextParentStyle"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/dr_light_gray_bg" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/email_id" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtEmailId"
+                style="@style/EditTextParentStyle"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/dr_light_gray_bg"
+                android:inputType="textEmailAddress" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/mobile_number" />
+
+            <LinearLayout
+                android:id="@+id/mobileLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/dr_light_gray_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_12sdp">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:elevation="@dimen/_5sdp"
+                    android:focusable="true"
+                    app:ccpDialog_backgroundColor="@color/colorWhite"
+                    app:ccp_clickable="true"
+                    app:ccp_contentColor="@color/colorBlack"
+                    app:ccp_padding="0dp"
+                    app:ccp_showArrow="false"
+                    app:ccp_showFlag="false"
+                    app:ccp_showNameCode="false"
+                    app:ccp_textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtPhoneNumber"
+                    style="@style/EditTextParentStyle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/hint_enter_mobile_number"
+                    android:imeOptions="actionGo"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/dinning_type" />
+
+            <LinearLayout
+                android:id="@+id/llDinningType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/dr_light_gray_bg"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDinningType"
+                        style="@style/EditTextParentStyle"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/dr_light_gray_bg" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_marginHorizontal="@dimen/_12sdp"
+                        android:src="@drawable/ic_down_arrow_black" />
+
+                </LinearLayout>
+
+                <com.xongolab.hotellifyr.custom.CustomSpinner
+                    android:id="@+id/spDinningType"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@null" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Text12RegularGray"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/number_of_guest_s" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edtNumberOfGuests"
+                        style="@style/EditTextParentStyle"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@drawable/dr_light_gray_bg"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Text12RegularGray"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/booking_date" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBookingDate"
+                        style="@style/EditTextParentStyle"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@drawable/dr_light_gray_bg" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/message" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtLocation"
+                style="@style/EditTextParentStyle"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/dr_light_gray_bg" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnSubmit"
+        style="@style/ButtonPrimaryStyle"
+        android:layout_margin="@dimen/_15sdp"
+        android:text="@string/submit" />
+
+</LinearLayout>

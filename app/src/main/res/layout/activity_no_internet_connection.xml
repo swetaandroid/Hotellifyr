@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context=".view.activity.NoInternetConnectionActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/payu_no_internet"
+        android:tint="@color/colorPrimary" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/Text14BoldPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:gravity="center"
+        android:text="@string/no_internet_connection" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/Text12MediumSecondary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="@string/check_your_internet_connection_nand_try_again" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnTryAgain"
+        style="@style/ButtonPrimaryStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:gravity="center"
+        android:paddingStart="@dimen/_20sdp"
+        android:paddingEnd="@dimen/_20sdp"
+        android:text="@string/try_again" />
+
+
+</LinearLayout>

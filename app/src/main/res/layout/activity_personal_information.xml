@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activity.account.PersonalInformationActivity">
+
+    <include
+        android:id="@+id/layoutToolBar"
+        layout="@layout/normal_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_8sdp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_15sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularGray"
+                    android:singleLine="false"
+                    android:text="@string/personal_info_desc" />
+
+                <RelativeLayout
+                    android:id="@+id/rlUploadProfile"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="@dimen/_20sdp"
+                    android:background="@drawable/dr_primary_circle"
+                    android:backgroundTint="@color/colorWhite"
+                    android:elevation="@dimen/_3sdp"
+                    android:padding="@dimen/_3sdp">
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/ivProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_centerVertical="true"
+                        app:placeholderImage="@drawable/ic_placeholder_square"
+                        app:roundAsCircle="true"
+                        app:roundingBorderColor="@color/colorWhite"
+                        app:roundingBorderWidth="@dimen/_2sdp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="@dimen/_minus5sdp"
+                        android:src="@drawable/ic_edit_secondary" />
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/first_name" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtFirstName"
+                    style="@style/EditTextParentStyle"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/dr_light_gray_bg"
+                    tools:text="Jennifer" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/last_name" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtLastName"
+                    style="@style/EditTextParentStyle"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/dr_light_gray_bg"
+                    tools:text="Stiffler" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/mobile_number" />
+
+                <LinearLayout
+                    android:id="@+id/mobileLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/dr_light_gray_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_12sdp">
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/ccp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:elevation="@dimen/_5sdp"
+                        android:focusable="false"
+                        app:ccpDialog_backgroundColor="@color/colorWhite"
+                        app:ccp_clickable="false"
+                        app:ccp_contentColor="@color/colorBlack"
+                        app:ccp_padding="0dp"
+                        app:ccp_showArrow="false"
+                        app:ccp_showFlag="false"
+                        app:ccp_showNameCode="false"
+                        app:ccp_textSize="@dimen/_12ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/edtMobile"
+                        style="@style/EditTextParentStyle"
+                        android:background="@null"
+                        android:hint="@string/hint_enter_mobile_number"
+                        android:imeOptions="actionGo"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingEnd="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ccp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/email_address" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtEmailId"
+                    style="@style/EditTextParentStyle"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/dr_light_gray_bg"
+                    tools:text="jennifer.stiffler@gmail.com" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/country" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llCountry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/dr_light_gray_bg"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvCountry"
+                            style="@style/EditTextParentStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:text="@string/country" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_12sdp"
+                            android:src="@drawable/ic_down_arrow_black" />
+
+                    </LinearLayout>
+
+                    <com.xongolab.hotellifyr.custom.CustomSpinner
+                        android:id="@+id/spCountry"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@null" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/state" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/dr_light_gray_bg"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvState"
+                            style="@style/EditTextParentStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:text="@string/state" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_12sdp"
+                            android:src="@drawable/ic_down_arrow_black" />
+
+                    </LinearLayout>
+
+                    <com.xongolab.hotellifyr.custom.CustomSpinner
+                        android:id="@+id/spState"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@null" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/city" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/dr_light_gray_bg"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvCity"
+                            style="@style/EditTextParentStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:text="@string/city" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_12sdp"
+                            android:src="@drawable/ic_down_arrow_black" />
+
+                    </LinearLayout>
+
+                    <com.xongolab.hotellifyr.custom.CustomSpinner
+                        android:id="@+id/spCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@null" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/street_address_optional" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtAddress"
+                    style="@style/EditTextParentStyle"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/dr_light_gray_bg"
+                    android:hint="@string/enter_street_address" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularBlack"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/gender"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/dr_light_gray_bg"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        style="@style/EditTextParentStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/icArrowGender"
+                        android:background="@drawable/dr_light_gray_bg"
+                        android:hint="@string/prefer_not_to_disclose" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/icArrowGender"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:src="@drawable/ic_down_arrow_black" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text12RegularBlack"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/date_of_birth" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/edtDateOfBirth"
+                            style="@style/EditTextParentStyle"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:background="@drawable/dr_light_gray_bg"
+                            android:hint="@string/dd_mm_yyyy" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text12RegularBlack"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/date_of_anniversary" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/edtAnniversary"
+                            style="@style/EditTextParentStyle"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:background="@drawable/dr_light_gray_bg"
+                            android:hint="@string/dd_mm_yyyy" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:background="@color/colorLightGray"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_20sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12RegularGray"
+                    android:text="@string/additional_support"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/llHelpCenter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_15sdp"
+                    android:gravity="center_vertical"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Text12RegularBlack"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/visit_help_center" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/icArrowHelpCenter"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/ic_gray_back_arrow" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/ViewBorderStyle"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/llDeleteAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_15sdp"
+                    android:gravity="center_vertical"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Text12RegularBlack"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/cancel_or_delete_account" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/icArrowDeleteAccount"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/ic_gray_back_arrow" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/ViewBorderStyle"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnSave"
+                    style="@style/ButtonParentStyle"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:text="@string/save" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

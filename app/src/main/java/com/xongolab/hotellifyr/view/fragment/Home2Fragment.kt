@@ -1,0 +1,567 @@
+package com.xongolab.hotellifyr.view.fragment
+
+import android.Manifest
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Intent
+import android.content.IntentSender
+import android.content.pm.PackageManager
+import android.location.Address
+import android.location.Geocoder
+import android.net.Uri
+import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.activity.result.IntentSenderRequest
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
+import androidx.core.view.updatePadding
+import androidx.lifecycle.ViewModelProvider
+import androidx.media3.common.MediaItem
+import androidx.media3.exoplayer.ExoPlayer
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.common.api.ResolvableApiException
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.LocationSettingsRequest
+import com.google.android.gms.location.SettingsClient
+import com.google.gson.Gson
+import com.xongolab.hotellifyr.R
+import com.xongolab.hotellifyr.core.CoreFragment
+import com.xongolab.hotellifyr.databinding.FragmentHome2Binding
+import com.xongolab.hotellifyr.model.HotelModel
+import com.xongolab.hotellifyr.model.ResortModel
+import com.xongolab.hotellifyr.model.SearchHotel
+import com.xongolab.hotellifyr.utils.Constants
+import com.xongolab.hotellifyr.utils.Pref
+import com.xongolab.hotellifyr.utils.Util
+import com.xongolab.hotellifyr.utils.Util.msgDialog
+import com.xongolab.hotellifyr.utils.makeGone
+import com.xongolab.hotellifyr.utils.makeVisible
+import com.xongolab.hotellifyr.view.activity.account.MemberDiscountDetailsActivity
+import com.xongolab.hotellifyr.view.activity.account.PersonalInformationActivity
+import com.xongolab.hotellifyr.view.activity.auth.LoginActivity
+import com.xongolab.hotellifyr.view.activity.home.CurrentOffersActivity
+import com.xongolab.hotellifyr.view.activity.home.MostRelevantActivity
+import com.xongolab.hotellifyr.view.activity.home.NewlyLaunchedActivity
+import com.xongolab.hotellifyr.view.activity.home.NewlyOpenedActivity
+import com.xongolab.hotellifyr.view.activity.home.RewardCircleActivity
+import com.xongolab.hotellifyr.view.activity.home.search.SearchActivity
+import com.xongolab.hotellifyr.view.activity.home.search.hotel.HotelDetailActivity
+import com.xongolab.hotellifyr.view.activity.home.search.hotel.HotelListViewActivity
+import com.xongolab.hotellifyr.view.activity.home.search.hotel.HotelOfferDetailActivity
+import com.xongolab.hotellifyr.view.activity.notification.NotificationActivity
+import com.xongolab.hotellifyr.view.adapter.BannerAdapter
+import com.xongolab.hotellifyr.view.adapter.BestOffersAdapter
+import com.xongolab.hotellifyr.view.adapter.CampaignTitleAdapter
+import com.xongolab.hotellifyr.view.adapter.CurrentOfferAdapter
+import com.xongolab.hotellifyr.view.adapter.RewardsCircleHorizontalAdapter
+import com.xongolab.hotellifyr.view.adapter.hotel.HotelTagAdapter
+import com.xongolab.hotellifyr.viewModel.HotelViewModel
+import com.xongolab.hotellifyr.viewModel.UserViewModel
+import com.xongolab.hotellifyr.viewModel.ViewModelFactory
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
+import java.util.TimeZone
+
+
+class Home2Fragment : CoreFragment() {
+    private lateinit var binding: FragmentHome2Binding
+
+    private lateinit var userViewModel: UserViewModel
+    private lateinit var hotelViewModel: HotelViewModel
+
+    private lateinit var bannerAdapter: BannerAdapter
+    private lateinit var campaignTitleAdapter: CampaignTitleAdapter
+    private lateinit var hotelTagAdapter: HotelTagAdapter
+    private lateinit var currentOfferAdapter: CurrentOfferAdapter
+    private lateinit var rewardsCircleHorizontalAdapter: RewardsCircleHorizontalAdapter
+    private lateinit var bestOffersAdapter: BestOffersAdapter
+
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
+    lateinit var player: ExoPlayer
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentHome2Binding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initView()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (Pref.getBooleanValue(Pref.PREF_IS_LOGIN, false)) {
+            binding.llDiscoverMember.makeVisible()
+            binding.llListData.updatePadding(
+                top = coreActivity!!.resources.getDimension(com.intuit.sdp.R.dimen._24sdp).toInt()
+            )
+            getCustomerInfoApi()
+        } else {
+            binding.llListData.updatePadding(top = 0)
+            binding.llDiscoverMember.makeGone()
+        }
+        requestLocationPermission()
+    }
+
+    private fun initView() {
+        initViewModel()
+
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(coreActivity!!)
+
+        binding.ivProfile.setOnClickListener(this)
+        binding.llDiscoverMember.setOnClickListener(this)
+
+        binding.ivProfile.setImageURI(Pref.getStringValue(Pref.PREF_PROFILE_PIC,""))
+
+        bannerAdapter = BannerAdapter(coreActivity!!)
+
+        binding.viewPager.adapter = bannerAdapter
+        binding.viewPager.currentItem = 0
+        binding.indicator.isSaveFromParentEnabled = false
+        binding.indicator.attachTo(binding.viewPager)
+
+        player = ExoPlayer.Builder(coreActivity!!).build()
+        binding.videoView.player = player
+
+        getHomeBannerListApi()
+
+        binding.btnSearch.setOnClickListener(this)
+        binding.tvCurrentOffersViewAll.setOnClickListener(this)
+        binding.tvRewardCircleViewAll.setOnClickListener(this)
+
+        campaignTitleAdapter = CampaignTitleAdapter(coreActivity!!)
+        binding.rvCampaignName.layoutManager = LinearLayoutManager(coreActivity!!, RecyclerView.VERTICAL, false)
+        binding.rvCampaignName.adapter = campaignTitleAdapter
+
+        campaignTitleAdapter.onItemClick = { _, item ->
+            if (item.type == "hotel") {
+                val dateFormat =
+                    SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.getDefault())
+                dateFormat.timeZone = TimeZone.getDefault()
+
+                // Get current calendar instance
+                val calendar = Calendar.getInstance()
+
+                // Format today's date
+                val today = dateFormat.format(calendar.time)
+
+                calendar.add(Calendar.DAY_OF_YEAR, 1)
+                val tomorrow = dateFormat.format(calendar.time)
+
+                val searchHotel = SearchHotel()
+                searchHotel.apply {
+                    rooms = 1
+                    adults = 1
+                    children = 0
+                    hotelIds = item.hotelIDs
+                    type = Constants.HOTEL
+                    checkIn = today
+                    checkOut = tomorrow
+                }
+                val intent = Intent(coreActivity!!, HotelListViewActivity::class.java)
+                intent.putExtra(Constants.SEARCH_HOTEL, Gson().toJson(searchHotel))
+                startActivity(intent)
+            }
+
+        }
+
+        getCampaignListApi()
+
+        hotelTagAdapter = HotelTagAdapter(coreActivity!!)
+        binding.rvHotelTag.layoutManager = LinearLayoutManager(coreActivity!!, RecyclerView.VERTICAL, false)
+        binding.rvHotelTag.adapter = hotelTagAdapter
+
+        hotelTagAdapter.onItemClick = { code, item ->
+            val dateFormat = SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.getDefault())
+            dateFormat.timeZone = TimeZone.getDefault()
+
+            // Get current calendar instance
+            val calendar = Calendar.getInstance()
+
+            // Format today's date
+            val today = dateFormat.format(calendar.time)
+
+            calendar.add(Calendar.DAY_OF_YEAR, 1)
+            val tomorrow = dateFormat.format(calendar.time)
+
+            val searchHotel = SearchHotel()
+            searchHotel.apply {
+                rooms = 1
+                adults = 1
+                children = 0
+                hotelID = item.id
+                location = item.address
+                type = Constants.HOTEL
+                checkIn = today
+                checkOut = tomorrow
+            }
+            val intent = Intent(coreActivity!!, HotelDetailActivity::class.java)
+            intent.putExtra(Constants.SEARCH_HOTEL, Gson().toJson(searchHotel))
+            startActivity(intent)
+        }
+
+        hotelTagAdapter.onViewAllItemClick = { code, item ->
+            when(code){
+                "NEWLY_OPENED" -> startActivity(Intent(coreActivity!!, NewlyOpenedActivity::class.java).putExtra(Constants.HOTELS, Gson().toJson(item)))
+                "POPULAR_CHOICE" -> startActivity(Intent(coreActivity!!, NewlyLaunchedActivity::class.java).putExtra(Constants.HOTELS, Gson().toJson(item)))
+                "HOT_SELLING" -> startActivity(Intent(coreActivity!!, MostRelevantActivity::class.java).putExtra(Constants.HOTELS, Gson().toJson(item)))
+                else -> startActivity(Intent(coreActivity!!, MostRelevantActivity::class.java).putExtra(Constants.HOTELS, Gson().toJson(item)))
+            }
+        }
+
+        getHotelTagListApi()
+
+        currentOfferAdapter = CurrentOfferAdapter(coreActivity!!)
+        binding.rvCurrentOffer.layoutManager = LinearLayoutManager(coreActivity!!, RecyclerView.HORIZONTAL, false)
+        binding.rvCurrentOffer.adapter = currentOfferAdapter
+
+        currentOfferAdapter.onItemClick = { item ->
+            val model = HotelModel.HotelOffersSection().apply {
+                title = item.title
+                description = item.description
+                details = item.details
+                id = item.id
+                images.add(item.images)
+                validity = item.validity
+                subtitle = item.subtitle
+            }
+
+            val intent = Intent(coreActivity!!, HotelOfferDetailActivity::class.java)
+            intent.putExtra("response", Gson().toJson(model))
+            startActivity(intent)
+        }
+
+        val snapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(binding.rvCurrentOffer)
+
+        getCurrentOfferListApi()
+
+        rewardsCircleHorizontalAdapter = RewardsCircleHorizontalAdapter(coreActivity!!)
+        binding.rvRewardsCircle.layoutManager = GridLayoutManager(coreActivity!!, 2, RecyclerView.HORIZONTAL, false)
+        binding.rvRewardsCircle.adapter = rewardsCircleHorizontalAdapter
+
+        rewardsCircleHorizontalAdapter.onItemClick = {
+            startActivity(Intent(coreActivity!!, RewardCircleActivity::class.java))
+        }
+
+        rewardsCircleList()
+
+        bestOffersAdapter = BestOffersAdapter(coreActivity!!)
+        binding.llBestOffers.rvBestOffers.layoutManager = LinearLayoutManager(coreActivity!!, RecyclerView.HORIZONTAL, false)
+        binding.llBestOffers.rvBestOffers.adapter = bestOffersAdapter
+
+        bestOffersList()
+    }
+
+    private fun initViewModel() {
+        userViewModel = ViewModelProvider(this, ViewModelFactory(coreActivity!!.mainRepository))[UserViewModel::class.java]
+        hotelViewModel = ViewModelProvider(this, ViewModelFactory(coreActivity!!.mainRepository))[HotelViewModel::class.java]
+        observeViewModel()
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun observeViewModel() {
+        userViewModel.getCustomerInfoApiResponse.observe(coreActivity!!) { response ->
+            response?.let {
+                val payload = it.payload!!
+                binding.apply {
+                    Pref.setStringValue(Pref.PREF_PROFILE_PIC, payload.avatar ?: "")
+                    ivProfile.setImageURI(payload.avatar)
+
+                    tvCurrentTier.text = "${payload.currentTier} ${getString(R.string.member)}"
+                    tvAvailablePoints.text = "${payload.availablePoints} ${getString(R.string.reward_points)}"
+                    tvGreeting.text = "${getString(R.string.hello_2)}, ${payload.firstName} \uD83D\uDC4B"
+
+                    Pref.setStringValue(Pref.PREF_FIRST_NAME, payload.firstName)
+                    Pref.setStringValue(Pref.PREF_LAST_NAME, payload.lastName)
+                    Pref.setStringValue(Pref.PREF_EMAIL, payload.email)
+                    Pref.setStringValue(Pref.PREF_COUNTRY_CODE, payload.mobileCountryCode)
+                    Pref.setStringValue(Pref.PREF_PROFILE_PIC, payload.avatar ?: "")
+                }
+            }
+        }
+
+        hotelViewModel.getHomeBannerListApiResponse.observe(coreActivity!!) { response ->
+            response?.let {
+                if (it.payload!!.showHomeVideo){
+                    binding.videoView.makeVisible()
+                    binding.viewPager.makeGone()
+
+                    val mediaItem = MediaItem.fromUri(it.payload!!.videoURL)
+                    player.setMediaItem(mediaItem)
+                    player.repeatMode = ExoPlayer.REPEAT_MODE_ONE
+                    player.prepare()
+                    player.playWhenReady = true
+
+                }else {
+                    bannerAdapter.addData(it.payload!!.bannerData)
+                    binding.videoView.makeGone()
+                    binding.viewPager.makeVisible()
+                }
+            }
+        }
+        hotelViewModel.getCurrentOfferListApiResponse.observe(coreActivity!!) { response ->
+            response?.let {
+                currentOfferAdapter.addData(it.payload)
+            }
+        }
+        hotelViewModel.getCampaignListApiResponse.observe(coreActivity!!) { response ->
+            response?.let {
+                campaignTitleAdapter.addData(it.payload)
+            }
+        }
+
+        hotelViewModel.getHotelTagListApiResponse.observe(coreActivity!!) { response ->
+            response?.let {
+                hotelTagAdapter.addData(it.payload)
+            }
+        }
+
+    }
+
+    @SuppressLint("HardwareIds")
+    private fun getCustomerInfoApi() {
+        if (isInternetConnected()) {
+            userViewModel.getCustomerInfoApi(coreActivity!!)
+        } else {
+            msgDialog(coreActivity!!, getString(R.string.check_internet))
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun getHomeBannerListApi() {
+        if (isInternetConnected()) {
+            hotelViewModel.getHomeBannerListApi(coreActivity!!)
+        } else {
+            msgDialog(coreActivity!!, getString(R.string.check_internet))
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun getCampaignListApi() {
+        if (isInternetConnected()) {
+            hotelViewModel.getCampaignListApi(coreActivity!!)
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun getHotelTagListApi() {
+        if (isInternetConnected()) {
+            hotelViewModel.getHotelTagListApi(coreActivity!!)
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun getCurrentOfferListApi() {
+        if (isInternetConnected()) {
+            hotelViewModel.getCurrentOfferListApi(coreActivity!!)
+        }
+    }
+
+    override fun onClick(view: View) {
+        when (view.id) {
+            R.id.tvCurrentOffersViewAll -> {
+                startActivity(Intent(coreActivity!!, CurrentOffersActivity::class.java).putParcelableArrayListExtra(Constants.OFFERS, currentOfferAdapter.objList))
+            }
+
+            R.id.tvRewardCircleViewAll -> {
+                startActivity(Intent(coreActivity!!, RewardCircleActivity::class.java))
+            }
+
+            R.id.btnSearch -> {
+                startActivity(Intent(coreActivity!!, SearchActivity::class.java))
+            }
+
+            R.id.ivProfile -> {
+                if (Pref.getBooleanValue(Pref.PREF_IS_LOGIN,false)) {
+                    startActivity(Intent(coreActivity!!, PersonalInformationActivity::class.java))
+                }else{
+                    startActivity(Intent(coreActivity!!, LoginActivity::class.java))
+                }
+            }
+
+            R.id.llDiscoverMember -> {
+                if (Pref.getBooleanValue(Pref.PREF_IS_LOGIN,false)) {
+                    startActivity(Intent(coreActivity!!, PersonalInformationActivity::class.java))
+                }else{
+                    startActivity(Intent(coreActivity!!, LoginActivity::class.java))
+                }
+            }
+        }
+    }
+
+    private fun rewardsCircleList() {
+        rewardsCircleHorizontalAdapter.objList = ArrayList()
+
+        var model = ResortModel()
+        model.profileImg = R.drawable.ic_rewards_circle_1
+        rewardsCircleHorizontalAdapter.objList.add(model)
+
+        model = ResortModel()
+        model.profileImg = R.drawable.ic_rewards_circle_2
+        rewardsCircleHorizontalAdapter.objList.add(model)
+
+        model = ResortModel()
+        model.profileImg = R.drawable.ic_rewards_circle_3
+        rewardsCircleHorizontalAdapter.objList.add(model)
+
+        model = ResortModel()
+        model.profileImg = R.drawable.ic_rewards_circle_4
+        rewardsCircleHorizontalAdapter.objList.add(model)
+
+        model = ResortModel()
+        model.profileImg = R.drawable.ic_rewards_circle_5
+        rewardsCircleHorizontalAdapter.objList.add(model)
+
+        model = ResortModel()
+        model.profileImg = R.drawable.ic_rewards_circle_6
+        rewardsCircleHorizontalAdapter.objList.add(model)
+
+        rewardsCircleHorizontalAdapter.addData(rewardsCircleHorizontalAdapter.objList)
+    }
+
+    private fun bestOffersList() {
+        bestOffersAdapter.objList = ArrayList()
+
+        var model = ResortModel()
+        model.profileImg = R.drawable.ic_best_offer_1
+        model.title = "Royal Orchid Beach Resort & Spa, Goa"
+        bestOffersAdapter.objList.add(model)
+
+        model = ResortModel()
+        model.profileImg = R.drawable.ic_best_offer_2
+        model.title = "Royal Orchid Beach Resort & Spa, Goa"
+        bestOffersAdapter.objList.add(model)
+
+        model = ResortModel()
+        model.profileImg = R.drawable.ic_best_offer_3
+        model.title = "Royal Orchid Beach Resort & Spa, Goa"
+        bestOffersAdapter.objList.add(model)
+
+        model = ResortModel()
+        model.profileImg = R.drawable.ic_best_offer_4
+        model.title = "Royal Orchid Beach Resort & Spa, Goa"
+        bestOffersAdapter.objList.add(model)
+
+        bestOffersAdapter.addData(bestOffersAdapter.objList)
+    }
+
+    private fun requestLocationPermission() {
+        if (ActivityCompat.checkSelfPermission(
+                coreActivity!!,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
+            getCurrentLocation()
+        } else {
+            requestLocationPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
+        }
+    }
+
+    private val requestLocationPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted: Boolean ->
+        if (isGranted) {
+            getCurrentLocation()
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun getCurrentLocation() {
+        fusedLocationClient.lastLocation.addOnSuccessListener(coreActivity!!) { location ->
+            if (location != null) {
+                if (Geocoder.isPresent()) {
+                    val geocoder = Geocoder(coreActivity!!, Locale.getDefault())
+                    val addresses: List<Address> = geocoder.getFromLocation(location.latitude, location.longitude, 1)!!
+
+                    if (addresses.isNotEmpty()) {
+                        // Handle address retrieval if needed
+                        val cityName = addresses[0].locality // Extract city name
+                        if (cityName != null) {
+                            binding.tvLocation.text = cityName
+                        } else {
+                            binding.tvLocation.text = ""
+                        }
+                    }
+                } else {
+                    Log.e("Geocoder", "Geocoder service is unavailable on this device.")
+                }
+            } else {
+                isLocationEnabled()
+            }
+        }
+    }
+
+    /*override fun onDestroy() {
+        super.onDestroy()
+        player.release()
+    }*/
+
+    //
+    override fun onPause() {
+        super.onPause()
+        // ::player.isInitialized check
+        if (::player.isInitialized) {
+            player.pause()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // Add the ::player.isInitialized check
+        if (::player.isInitialized) {
+            player.stop()
+            player.release()
+        }
+    }
+
+    private fun isLocationEnabled() {
+
+        val locationRequest = LocationRequest.create()
+        locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+
+        val builder = LocationSettingsRequest.Builder().addLocationRequest(locationRequest)
+
+        val client: SettingsClient = LocationServices.getSettingsClient(coreActivity!!)
+        val task = client.checkLocationSettings(builder.build())
+
+        task.addOnSuccessListener {
+            getCurrentLocation()
+        }
+
+        task.addOnFailureListener { exception ->
+            if (exception is ResolvableApiException) {
+                try {
+                    val intentSenderRequest =
+                        IntentSenderRequest.Builder(exception.resolution).build()
+                    resolutionResultLauncher.launch(intentSenderRequest)
+                } catch (sendEx: IntentSender.SendIntentException) {
+                    // Ignore the error.
+                }
+            }
+        }
+    }
+
+    private val resolutionResultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                Log.d("Resolution", "Resolution succeeded!")
+                getCurrentLocation() // Proceed after success
+            } else {
+                Log.e("Resolution", "Resolution failed or was canceled.")
+            }
+        }
+}

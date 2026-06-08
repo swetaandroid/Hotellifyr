@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_135sdp"
+    android:layout_height="@dimen/_75sdp"
+    android:layout_marginHorizontal="@dimen/_5sdp"
+    android:layout_marginVertical="@dimen/_5sdp"
+    android:elevation="0dp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardCornerRadius="@dimen/_15sdp"
+    app:cardElevation="0dp">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/ivReward"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:actualImageResource="@drawable/ic_rewards_circle_1"
+        app:failureImage="@drawable/ic_placeholder_square"
+        app:failureImageScaleType="fitXY"
+        app:placeholderImage="@drawable/ic_placeholder_square"
+        app:placeholderImageScaleType="fitXY"
+        app:roundedCornerRadius="@dimen/_20sdp" />
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:padding="@dimen/_15sdp"
+    tools:context=".view.activity.auth.SignupActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_gravity="center"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:src="@drawable/ic_new_logo" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/dr_white_bg_30"
+                android:elevation="@dimen/_2sdp"
+                android:orientation="vertical"
+                android:padding="@dimen/_15sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLetsMakeIt"
+                    style="@style/Text16BoldBlack"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:singleLine="false"
+                    android:text="@string/let_s_make_it_happen_together" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCreateAnAccount"
+                    style="@style/Text12RegularGray"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:singleLine="false"
+                    android:text="@string/create_an_account" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtFirstName"
+                    style="@style/EditTextParentStyle"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/dr_light_gray_bg"
+                    android:hint="@string/hint_enter_first_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtLastName"
+                    style="@style/EditTextParentStyle"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/dr_light_gray_bg"
+                    android:hint="@string/hint_enter_last_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtEmailId"
+                    style="@style/EditTextParentStyle"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/dr_light_gray_bg"
+                    android:hint="@string/hint_enter_email_id"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/mobileLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/dr_light_gray_bg"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_12sdp">
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/ccp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:elevation="@dimen/_5sdp"
+                        android:focusable="true"
+                        app:ccpDialog_backgroundColor="@color/colorWhite"
+                        app:ccp_clickable="false"
+                        app:ccp_contentColor="@color/colorBlack"
+                        app:ccp_padding="0dp"
+                        app:ccp_showArrow="false"
+                        app:ccp_showFlag="false"
+                        app:ccp_showNameCode="false"
+                        app:ccp_textSize="@dimen/_12ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/edtPhoneNumber"
+                        style="@style/EditTextParentStyle"
+                        android:layout_width="match_parent"
+                        android:background="@null"
+                        android:hint="@string/hint_enter_mobile_number"
+                        android:imeOptions="actionGo"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingEnd="0dp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/termsConditionLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivAgree"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:src="@drawable/cb_uncheck" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAgreeTerms"
+                        style="@style/Text12RegularBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:singleLine="false"
+                        android:text="@string/i_agree_terms_conditions" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnRegister"
+                    style="@style/ButtonPrimaryStyle"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:text="@string/register" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

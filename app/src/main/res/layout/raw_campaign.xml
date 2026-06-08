@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_165sdp"
+    android:layout_height="@dimen/_165sdp"
+    android:layout_margin="@dimen/_7sdp"
+    android:elevation="0dp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardCornerRadius="@dimen/_20sdp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/ivIcon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:actualImageResource="@drawable/ic_hot_selling_1"
+            app:failureImage="@drawable/ic_placeholder_rectangle"
+            app:failureImageScaleType="fitXY"
+            app:placeholderImage="@drawable/ic_placeholder_rectangle"
+            app:placeholderImageScaleType="fitXY"
+            app:roundedCornerRadius="@dimen/_20sdp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dr_top_gradient_transparent_15" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/Text12RegularWhite"
+            android:layout_above="@+id/llBookNow"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_7sdp"
+            android:background="@drawable/dr_white_bg_30"
+            android:backgroundTint="@color/colorWhiteLight"
+            android:gravity="center"
+            android:maxLines="2"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_3sdp"
+            android:singleLine="false"
+            android:text="Summer Holiday in Goa" />
+
+        <LinearLayout
+            android:id="@+id/llBookNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvExploreMore"
+                style="@style/Text10BoldWhite"
+                android:layout_width="wrap_content"
+                android:text="@string/book_now" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:src="@drawable/ic_next" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDesc"
+            style="@style/Text9RegularGray"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:maxLines="3"
+            android:singleLine="false"
+            android:text="All boast stunning beaches and many Royal Orchid and Regenta properties to choose from."
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:context=".view.activity.home.AddOnsExperienceDetailsActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/main_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                app:cardCornerRadius="@dimen/_15sdp">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/ivIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:failureImage="@drawable/ic_placeholder_square"
+                    app:failureImageScaleType="fitXY"
+                    app:placeholderImage="@drawable/ic_placeholder_square"
+                    app:placeholderImageScaleType="fitXY" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/_15sdp">
+
+                <RelativeLayout
+                    android:id="@+id/rlImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                        android:id="@+id/indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        app:dotsClickable="false"
+                        app:dotsColor="@color/colorWhiteTrans20"
+                        app:dotsSize="@dimen/_6sdp"
+                        app:dotsSpacing="@dimen/_2sdp"
+                        app:selectedDotColor="@color/colorWhite" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.xongolab.hotellifyr.custom.ReadMoreTextView
+                android:id="@+id/tvDescription"
+                style="@style/Text12RegularBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:singleLine="false"
+                android:text="Scuba diving in Goa at Grand Island is an experience beyond your imagination. One can explore a different world altogether. The Grand Island in Goa is the most popular one day trip adventure and Goa vacation gateways for tourists."
+                app:readMoreColor="@color/colorPrimary"
+                app:readMoreMaxLine="4"
+                app:readMoreText="@string/read_more" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12MediumBlack"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:singleLine="false"
+                android:text="@string/packages" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPackages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/raw_packages" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:padding="@dimen/_15sdp"
+    tools:context=".view.activity.auth.LoginActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_gravity="center"
+        android:layout_marginVertical="@dimen/_30sdp"
+        android:src="@drawable/ic_new_logo" />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_2sdp"
+        android:background="@drawable/dr_white_bg_30"
+        android:elevation="@dimen/_2sdp"
+        android:orientation="vertical"
+        android:padding="@dimen/_15sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWelcomeBack"
+            style="@style/Text16BoldBlack"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:singleLine="false"
+            android:text="@string/welcome_back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLoginDesc"
+            style="@style/Text12RegularGray"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:singleLine="false"
+            android:text="@string/login_to_manage_points_redeem_rewards_and_enjoy_member_only_discounts" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mobileLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@drawable/dr_light_gray_bg"
+            android:paddingHorizontal="@dimen/_12sdp">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:elevation="@dimen/_5sdp"
+                android:focusable="true"
+                app:ccpDialog_backgroundColor="@color/colorLightGray"
+                app:ccp_clickable="true"
+                app:ccp_contentColor="@color/colorBlack"
+                app:ccp_padding="0dp"
+                app:ccp_showArrow="false"
+                app:ccp_showFlag="false"
+                app:ccp_showNameCode="false"
+                app:ccp_textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtPhoneNumber"
+                style="@style/EditTextParentStyle"
+                android:layout_width="0dp"
+                android:background="@null"
+                android:hint="@string/hint_enter_mobile_number"
+                android:imeOptions="actionGo"
+                android:inputType="number"
+                android:maxLength="10"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ccp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnRequestOTP"
+            style="@style/ButtonPrimaryStyle"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/request_otp" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

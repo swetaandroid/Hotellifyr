@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF6D59</color>
+    <color name="colorTransPrimary">#1AFF6D59</color>
+    <color name="colorLightPrimary">#BB52FF</color>
+    <color name="colorSecondary">#010101</color>
+    <color name="colorTransSecondary">#99010101</color>
+    <color name="colorGray">#808080</color>
+    <color name="colorBlack">#212121</color>
+    <color name="colorBlack90">#E5212121</color>
+    <color name="black">#000000</color>
+    <color name="colorBlackTrans">#B3000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBorderGray">#E6E6E6</color>
+    <color name="colorGrayBorder">#DDDDE3</color>
+    <color name="colorOffWhite">#F8F8F8</color>
+    <color name="colorWhiteLight">#4DFFFFFF</color>
+    <color name="colorGrayLight">#33676733</color>
+    <color name="colorSubTitle">#9D9D9D</color>
+    <color name="colorOrange">#EB8A5D</color>
+    <color name="colorOutLine">#C8C8C8</color>
+    <color name="colorLightBorder">#66C8C8C8</color>
+    <color name="colorWhiteTrans20">#D3D3D3</color>
+    <color name="colorLightGray">#F8F8F8</color>
+    <color name="colorBottomNavigation">#E6212121</color>
+    <color name="colorTopNavigation">#A9454343</color>
+    <color name="colorBlur">#80000000</color>
+    <color name="colorF1F1F1">#F1F1F1</color>
+    <color name="shimmer_placeholder">#F0F0F0</color>
+    <color name="colorRed">#EE1919</color>
+    <color name="colorLightRed">#1AEE1919</color>
+    <color name="colorBlue">#1B89FF</color>
+    <color name="colorYellow">#EDB900</color>
+    <color name="colorLightWhite">#0FFFFFFF</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="yourAccentColor">#010101</color>
+    <color name="yourPrimaryTextColor">#000000</color>
+    <color name="yourHeaderColor">#3F51B5</color>
+    <color name="colorGreen">#15803D</color>
+
+
+    <!--    TODO : Purpal Gradient-->
+    <color name="ColorLightPurpal">#9796F0</color>
+    <color name="ColorDarkPurpal">#FBC7D4</color>
+
+    <!--    TODO : Blue Gradient-->
+    <color name="ColorLightBlue">#24C6DC</color>
+    <color name="ColorDarkBlue">#8881D7</color>
+
+    <!--    TODO : Red Gradient-->
+    <color name="ColorLightRed2">#DD5E89</color>
+    <color name="ColorDarkRed">#F7BB97</color>
+
+    <!--    TODO : Orange Gradient-->
+    <color name="ColorDarkOrange">#FFD584</color>
+
+
+</resources>

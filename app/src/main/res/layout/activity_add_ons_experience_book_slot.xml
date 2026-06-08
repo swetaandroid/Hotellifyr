@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activity.home.AddOnsExperienceBookSlotActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/main_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                app:cardCornerRadius="@dimen/_15sdp">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/ivIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:failureImage="@drawable/ic_placeholder_square"
+                    app:failureImageScaleType="fitXY"
+                    app:placeholderImage="@drawable/ic_placeholder_square"
+                    app:placeholderImageScaleType="fitXY" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/_15sdp">
+
+                <RelativeLayout
+                    android:id="@+id/rlImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                        android:id="@+id/indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        app:dotsClickable="false"
+                        app:dotsColor="@color/colorWhiteTrans20"
+                        app:dotsSize="@dimen/_6sdp"
+                        app:dotsSpacing="@dimen/_2sdp"
+                        app:selectedDotColor="@color/colorWhite" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.xongolab.hotellifyr.custom.ReadMoreTextView
+                android:id="@+id/tvDescription"
+                style="@style/Text12RegularBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:singleLine="false"
+                android:text="@string/scuba_diving_in_goa_at_grand_island_is_an_experience_beyond_your_imagination_one_can_explore_a_different_world_altogether_the_grand_island_in_goa_is_the_most_popular_one_day_trip_adventure_and_goa_vacation_gateways_for_tourists"
+                app:readMoreColor="@color/colorSecondary"
+                app:readMoreMaxLine="3"
+                app:readMoreText="@string/read_more" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12MediumBlack"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:singleLine="false"
+                android:text="@string/book_a_slot" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBookSlotLBL"
+                style="@style/Text12RegularBlack"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:singleLine="false"
+                android:text="@string/scuba_diving_is_subject_to_availability_hence_select_package_amp_date_time_to_block_your_slot" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBookSlot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_8sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/raw_book_slot" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:src="@drawable/ic_person_secondary" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text12RegularBlack"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:singleLine="false"
+                            android:text="@string/number_of_guest" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llGuest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/dr_light_gray_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="@dimen/_10sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvGuest"
+                                style="@style/EditTextParentStyle"
+                                android:layout_width="138dp"
+                                android:layout_weight="1"
+                                android:text="0" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:src="@drawable/ic_down_arrow_black" />
+
+                        </LinearLayout>
+
+                        <com.xongolab.hotellifyr.custom.CustomSpinner
+                            android:id="@+id/spGuest"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="@null" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:src="@drawable/ic_calendar_secondary" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text12RegularBlack"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:singleLine="false"
+                            android:text="@string/date" />
+
+                    </LinearLayout>
+
+                    <!--   tools:text="Wed, 24 July"    -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDate"
+                        style="@style/EditTextParentStyle"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/dr_light_gray_bg"
+                        android:hint="Select date" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llBookSlot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:background="@drawable/dr_black_bg_10"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPrice"
+                        style="@style/Text16RegularWhite"
+                        android:layout_width="wrap_content"
+                        android:includeFontPadding="false"
+                        android:singleLine="false"
+                        tools:text="3,500" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvType"
+                        style="@style/Text10RegularGray"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:includeFontPadding="false"
+                        android:text="@string/inr_gold"
+                        android:textColor="@color/colorOutLine" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnBookNow"
+                    style="@style/Text10BoldBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/dr_white_bg_30"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:text="@string/book_a_slot" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

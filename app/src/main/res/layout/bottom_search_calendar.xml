@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llNoData"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/_15sdp"
+    app:behavior_hideable="true"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <RelativeLayout
+        android:id="@+id/rlToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Text14MediumBlack"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/select_dates" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivClose"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentEnd="true"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_close" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlToolBar"
+        android:layout_marginTop="@dimen/_20sdp">
+
+        <!--    TODO ::: Check in-->
+        <RelativeLayout
+            android:id="@+id/rlCheckIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCheckIn"
+                style="@style/Text12RegularGray"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/check_in" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvCheckIn"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCheckInDate"
+                    style="@style/Text14MediumBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:includeFontPadding="false"
+                    android:textSize="@dimen/_30ssp"
+                    tools:text="18" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_toEndOf="@id/tvCheckInDate"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCheckInWeek"
+                        style="@style/Text10RegularBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingTop="@dimen/_1sdp"
+                        app:textAllCaps="true"
+                        tools:text="THU" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCheckInMonth"
+                        style="@style/Text10RegularBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:includeFontPadding="false"
+                        android:paddingTop="@dimen/_1sdp"
+                        app:textAllCaps="true"
+                        tools:text="JUL" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNoOfNights"
+            style="@style/Text10MediumWhite"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/dr_primary_bg_6"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_6sdp"
+            android:text="0 Night" />
+
+
+        <!--    TODO ::: Check out-->
+        <RelativeLayout
+            android:id="@+id/rlCheckOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCheckOut"
+                style="@style/Text12RegularBlack"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/check_out" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvCheckOut"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCheckOutDate"
+                    style="@style/Text14MediumBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:includeFontPadding="false"
+                    android:textSize="@dimen/_30ssp"
+                    tools:text="19" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_toEndOf="@id/tvCheckOutDate"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCheckOutWeek"
+                        style="@style/Text10RegularBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingTop="@dimen/_1sdp"
+                        app:textAllCaps="true"
+                        tools:text="THU" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCheckOutMonth"
+                        style="@style/Text10RegularBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingTop="@dimen/_1sdp"
+                        app:textAllCaps="true"
+                        tools:text="JUL" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <com.archit.calendardaterangepicker.customviews.DateRangeCalendarView
+        android:id="@+id/calendarDateRangePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_15sdp"
+        android:padding="0dp"
+        custom:calendar_tag="Test"
+        custom:date_selection_mode="free_range"
+        custom:disable_date_color="#ABABAB"
+        custom:editable="true"
+        custom:enable_time_selection="false"
+        custom:range_color="#70FF6D59"
+        custom:range_date_color="@color/colorPrimary"
+        custom:selected_date_circle_color="@color/colorPrimary"
+        custom:text_size_date="@dimen/_10ssp"
+        custom:text_size_title="@dimen/_16ssp"
+        custom:text_size_week="@dimen/_12ssp"
+        custom:title_color="@color/colorBlack"
+        custom:week_offset="0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnBookForToNight"
+        style="@style/ButtonPrimaryStyle"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:text="@string/book_for_tonight" />
+
+</LinearLayout>

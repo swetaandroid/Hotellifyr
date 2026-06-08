@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    android:orientation="vertical"
+    tools:context=".view.activity.account.subscription.SubscriptionBuyActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_subscription_buy_bg"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:src="@drawable/ic_back_white_arrow" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_15sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/product_sans_bold"
+                        android:gravity="center"
+                        android:text="@string/choose_subscription_plan"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_18ssp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_below="@id/tvTitle">
+
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/viewPager"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                            android:id="@+id/indicator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            app:dotsClickable="false"
+                            app:dotsColor="@color/colorWhiteTrans20"
+                            app:dotsSize="@dimen/_6sdp"
+                            app:dotsSpacing="@dimen/_2sdp"
+                            app:selectedDotColor="@color/colorWhite" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBlack"
+                android:orientation="vertical"
+                android:padding="@dimen/_15sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/llPerMonth"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5ssp"
+                        android:layout_weight="1"
+                        android:background="@drawable/dr_black_bg_with_light_white_border_10"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_10sdp"
+                        android:weightSum="1">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/radioMonth"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:src="@drawable/ic_radio_unselect_white" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text16BoldWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:text="1000" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text12RegularWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:text="@string/per_month" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llPerYear"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/dr_black_bg_with_light_white_border_10"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_10sdp"
+                        android:weightSum="1">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/radioYear"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:src="@drawable/ic_radio_unselect_white" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text16BoldWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:text="1000" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text12RegularWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:text="@string/per_year" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/icDot"
+                        android:layout_width="@dimen/_5sdp"
+                        android:layout_height="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:src="@drawable/dr_dark_gray_circle" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDescription"
+                        style="@style/Text10RegularOutLine"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:singleLine="false"
+                        android:text="Unlock exclusive member benefits including special hotel discounts, priority offers, complimentary perks, and premium stay experiences across Royal Regenta properties." />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnContinue"
+                    style="@style/ButtonParentStyle"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:background="@drawable/dr_light_gray_bg_25"
+                    android:text="@string/str_continue"
+                    android:textColor="@color/colorBlack" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
+

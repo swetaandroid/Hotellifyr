@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.home.search.hotel.HotelOfferDetailActivity">
+
+    <RelativeLayout
+        android:id="@+id/rlImageView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_alignParentTop="true">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/ivIcon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:actualImageResource="@drawable/img_restaurant"
+            app:failureImage="@drawable/ic_placeholder_square"
+            app:failureImageScaleType="fitXY"
+            app:placeholderImage="@drawable/ic_placeholder_square"
+            app:placeholderImageScaleType="fitXY" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dr_center_gradient_transparent_bg" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnBack"
+            style="@style/Text12RegularSecondary"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentStart="true"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:padding="@dimen/_6sdp"
+            android:src="@drawable/ic_back_white_arrow" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlImageView"
+        android:layout_marginTop="@dimen/_minus22sdp"
+        android:background="@drawable/dr_top_white_bg_30"
+        android:backgroundTint="@color/colorWhite"
+        android:fillViewport="true"
+        android:padding="@dimen/_15sdp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorWhite"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_saving" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/Text16BoldBlack"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center_horizontal"
+                android:singleLine="false"
+                android:text="Big Saving Deal" />
+
+            <View
+                style="@style/ViewLightBorderStyle"
+                android:layout_marginVertical="@dimen/_15sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12BoldBlack"
+                android:text="@string/details" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDescription"
+                style="@style/Text10RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:singleLine="false" />
+
+            <View
+                style="@style/ViewLightBorderStyle"
+                android:layout_marginVertical="@dimen/_15sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12BoldBlack"
+                android:text="@string/how_to_book" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHowToBook"
+                style="@style/Text10RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:singleLine="false"
+                android:text="@string/how_to_book_desc" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12BoldBlack"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/minimum_stay_length" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLength"
+                style="@style/Text10RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="4 Nights" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12BoldBlack"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/valid_stay_dates" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvValidity"
+                style="@style/Text10RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="1 January - 30 September 2024" />
+
+            <View
+                style="@style/ViewBorderStyle"
+                android:layout_marginVertical="@dimen/_15sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text12BoldBlack"
+                android:text="@string/terms_and_conditions" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text10RegularGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:singleLine="false"
+                android:lineSpacingExtra="@dimen/_3sdp"
+                android:text="• Offer valid for a limited time only.\n• Applicable at selected hotels only.\n• Rooms are subject to availability.\n• Offer cannot be combined with other discounts or promotions.\n• Taxes and additional charges may apply.\n• Valid ID proof is required during check-in.\n• Cancellation charges may apply as per hotel policy.\n• Blackout dates and peak season restrictions may apply.\n• Hotel reserves the right to modify or cancel the offer without prior notice." />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnSearch"
+                style="@style/ButtonParentStyle"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/search"
+                android:visibility="gone" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

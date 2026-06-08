@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llTransactionHistory"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:background="@drawable/dr_white_fill_gray_border_10"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/_15sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_1sdp"
+        android:background="@drawable/dr_light_gray_top_round_corner_10"
+        android:backgroundTint="@color/colorLightGray"
+        android:padding="@dimen/_15sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLBLInvoiceId"
+            style="@style/Text10RegularGray"
+            android:layout_width="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="@string/invoice_id" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvInvoiceId"
+            style="@style/Text10RegularBlack"
+            android:layout_width="wrap_content"
+            android:layout_toStartOf="@id/tvDate"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_toEndOf="@id/tvLBLInvoiceId"
+            android:text="130620241145" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDate"
+            style="@style/Text10RegularBlack"
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="13 Jun 2024" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_15sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text10RegularGray"
+                android:text="@string/points_accrued" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPointsAccrued"
+                style="@style/Text10RegularSecondary"
+                android:layout_marginTop="@dimen/_5sdp"
+                tools:text="10000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Text10RegularGray"
+                android:text="@string/points_redeemed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPointsRedeemed"
+                style="@style/Text10RegularSecondary"
+                android:layout_marginTop="@dimen/_5sdp"
+                tools:text="0" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/Text10RegularGray"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:text="@string/description" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDescription"
+        style="@style/Text10RegularBlack"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        tools:text="Payment through loyalty points" />
+
+
+</LinearLayout>

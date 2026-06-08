@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activity.home.search.hotel.HotelDetailActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rlImageView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_210sdp"
+                android:layout_alignParentTop="true">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_placeholder_rectangle" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/dr_center_gradient_transparent_bg" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:background="@drawable/dr_white_bg_6"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/_2sdp"
+                    android:paddingStart="@dimen/_2sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/raw_pager_image" />
+
+                <!--<com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    app:dotsClickable="false"
+                    app:dotsColor="@color/colorWhiteTrans20"
+                    app:dotsSize="@dimen/_6sdp"
+                    app:dotsSpacing="@dimen/_2sdp"
+                    app:selectedDotColor="@color/colorWhite" />-->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_30sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btnBack"
+                        style="@style/Text12RegularSecondary"
+                        android:layout_width="@dimen/_28sdp"
+                        android:layout_height="@dimen/_28sdp"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/ic_back_white_arrow" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btnShare"
+                        android:layout_width="@dimen/_28sdp"
+                        android:layout_height="@dimen/_28sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_toStartOf="@+id/btnWish"
+                        android:background="@drawable/dr_gray_circle_with_border"
+                        android:padding="@dimen/_8sdp"
+                        android:src="@drawable/ic_share" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btnWish"
+                        android:layout_width="@dimen/_28sdp"
+                        android:layout_height="@dimen/_28sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/dr_gray_circle_with_border"
+                        android:padding="@dimen/_7sdp"
+                        android:src="@drawable/ic_wish" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_minus22sdp"
+                android:background="@drawable/dr_top_white_bg_30"
+                android:backgroundTint="@color/colorWhite"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/_20sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_70sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:id="@+id/llReview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/dr_secondary_bg_5"
+                            android:backgroundTint="@color/colorTransPrimary"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/_5sdp"
+                            android:paddingVertical="@dimen/_3sdp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_star_fill" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvRating"
+                                style="@style/Text11RegularPrimary"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                tools:text="4.8 (365 reviews)" />
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvTag"
+                            style="@style/Text10RegularRed"
+                            android:layout_width="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/dr_light_red_border_white_bg_25"
+                            android:paddingHorizontal="@dimen/_10sdp"
+                            android:paddingVertical="@dimen/_3sdp"
+                            android:visibility="gone"
+                            tools:text="@string/hot_selling"
+                            tools:visibility="visible" />
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvHotelName"
+                        style="@style/Text14BoldBlack"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:singleLine="false"
+                        tools:text="@string/royal_orchid_beach_resort_spa_goa" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_6sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivLoc"
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_location" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvHotelAddress"
+                            style="@style/Text10RegularGray"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_7sdp"
+                            android:layout_toEndOf="@+id/ivLoc"
+                            tools:text="Utorda Beach Rd, Utarda, Goa 403713" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_7sdp">
+
+                        <LinearLayout
+                            android:id="@+id/btnCall"
+                            style="@style/SmallButtonPrimaryStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal"
+                            android:paddingVertical="@dimen/_6sdp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:src="@drawable/ic_call" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text12RegularWhite"
+                                android:layout_width="wrap_content"
+                                android:paddingHorizontal="@dimen/_7sdp"
+                                android:text="@string/call" />
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivLocation"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginHorizontal="@dimen/_8sdp"
+                            android:layout_toStartOf="@+id/icLocationDirection"
+                            android:padding="@dimen/_2sdp"
+                            android:src="@drawable/ic_location_circle" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/icLocationDirection"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:padding="@dimen/_2sdp"
+                            android:src="@drawable/ic_location_arrow_circle" />
+
+                    </RelativeLayout>
+
+                    <View
+                        style="@style/ViewLightBorderStyle"
+                        android:layout_margin="@dimen/_15sdp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvExperience"
+                        style="@style/Text13MediumBlack"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:singleLine="false"
+                        tools:text="@string/experience_world_class_service_at_royal_orchid_beach_resort_spa_goa" />
+
+                    <com.xongolab.hotellifyr.custom.ReadMoreTextView
+                        android:id="@+id/tvDescription"
+                        style="@style/Text11RegularBlack"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:singleLine="false"
+                        app:readLessText="@string/read_less"
+                        app:readMoreColor="@color/colorPrimary"
+                        app:readMoreMaxLine="3"
+                        app:readMoreText="@string/read_more"
+                        tools:text="" />
+
+                    <View
+                        android:id="@+id/view1"
+                        style="@style/ViewLightBorderStyle"
+                        android:layout_margin="@dimen/_15sdp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            style="@style/ViewLightBorderStyle"
+                            android:layout_below="@+id/rvHotelFacility"
+                            android:layout_marginTop="@dimen/_minus1sdp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvHotelFacility"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/raw_hotel_amenities_tab" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblHotelFacility"
+                            style="@style/Text13BoldBlack"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_toStartOf="@+id/tvViewAllHotelOffer"
+                            android:singleLine="false"
+                            android:text="@string/what_we_offer" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvViewAllHotelOffer"
+                            style="@style/Text12MediumPrimary"
+                            android:layout_width="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:paddingVertical="@dimen/_3sdp"
+                            android:text="@string/view_all"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <!--What We Offer-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvWhatWeOffer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_15sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/raw_what_we_offer" />
+
+                    <!--Gallery-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvGallery"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginVertical="@dimen/_15sdp"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="4"
+                        tools:itemCount="8"
+                        tools:listitem="@layout/raw_gallery" />
+
+                    <!--Drink & Dining-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvDrinkAndDinning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_15sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/raw_drinking_and_dining" />
+
+                    <!--Wedding event-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvWeddingEvent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_15sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/raw_drinking_and_dining" />
+
+                    <!--Hotel Offers-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvHotelOffer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_15sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/raw_hotel_offer" />
+
+
+                    <!--Amnities-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvAmenities"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginVertical="@dimen/_15sdp"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="2"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/raw_filter_items" />
+
+                    <!--How to Reach-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvHowToReach"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginVertical="@dimen/_15sdp"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:spanCount="2"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/raw_how_to_reach" />
+
+                    <!--Nearest Destinations-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvNearestDestinations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginVertical="@dimen/_15sdp"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:spanCount="2"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/raw_how_to_reach" />
+
+                    <!--Activities-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvActivities"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginVertical="@dimen/_15sdp"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="2"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/raw_hotel_type" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvNoDataFound"
+                        style="@style/Text11RegularGray"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginVertical="@dimen/_30sdp"
+                        android:text="@string/no_data_found"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlSelectRoom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:background="@drawable/dr_white_bg_12"
+            android:backgroundTint="@color/colorBlack90"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_toStartOf="@id/btnSelectRoom">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFrom"
+                    style="@style/Text10RegularGray"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/from"
+                    android:textColor="@color/colorOutLine" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPrice"
+                    style="@style/Text14BoldWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/tvFrom"
+                    android:layout_alignParentStart="true"
+                    android:text="0" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text10RegularGray"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/tvFrom"
+                    android:layout_alignTop="@id/tvPrice"
+                    android:layout_alignBottom="@id/tvPrice"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_toEndOf="@id/tvPrice"
+                    android:text="@string/inr_night"
+                    android:textColor="@color/colorOutLine" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnSelectRoom"
+                style="@style/Text12BoldBlack"
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/dr_white_bg_6"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_6sdp"
+                android:text="@string/select_room" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnCheckAvailability"
+            style="@style/ButtonParentStyle"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:text="@string/check_availability"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+

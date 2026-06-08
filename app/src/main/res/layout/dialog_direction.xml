@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llDirection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dr_white_bg_15"
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/_15sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Text10RegularBlack"
+            android:gravity="center"
+            android:text="@string/get_directions" />
+
+        <View
+            style="@style/ViewBorderStyle"
+            android:layout_marginVertical="@dimen/_15sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOpenGoogleMap"
+            style="@style/Text14RegularBlack"
+            android:gravity="center"
+            android:text="@string/open_in_google_maps"
+            android:textColor="@color/colorBlue" />
+
+        <View
+            android:visibility="gone"
+            style="@style/ViewBorderStyle"
+            android:layout_marginVertical="@dimen/_15sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCopyAddress"
+            style="@style/Text14RegularBlack"
+            android:gravity="center"
+            android:text="@string/copy_address"
+            android:visibility="gone"
+            android:textColor="@color/colorBlue" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnCancel"
+        style="@style/ButtonPrimaryStyle"
+        android:layout_marginVertical="@dimen/_15sdp"
+        android:text="@string/cancel" />
+
+</LinearLayout>

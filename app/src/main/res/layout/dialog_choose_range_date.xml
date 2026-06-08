@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dr_white_bg_15"
+    android:orientation="vertical"
+    android:padding="@dimen/_10sdp">
+
+    <com.archit.calendardaterangepicker.customviews.DateRangeCalendarView
+        android:id="@+id/calendarDateRangePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        custom:calendar_tag="Test"
+        custom:date_selection_mode="free_range"
+        custom:disable_date_color="#ABABAB"
+        custom:editable="true"
+        custom:enable_time_selection="false"
+        custom:range_color="#FBE7F4"
+        custom:range_date_color="@color/colorSecondary"
+        custom:selected_date_circle_color="@color/colorSecondary"
+        custom:text_size_date="@dimen/_8ssp"
+        custom:text_size_title="@dimen/_14ssp"
+        custom:text_size_week="@dimen/_10ssp"
+        custom:title_color="@color/colorBlack"
+        custom:week_offset="0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnBookForToNight"
+        style="@style/ButtonParentStyle"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:text="@string/book_for_tonight" />
+
+</LinearLayout>

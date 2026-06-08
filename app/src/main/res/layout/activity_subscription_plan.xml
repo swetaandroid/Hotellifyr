@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_subscription_bg"
+    tools:context=".view.activity.account.subscription.SubscriptionPlanActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnBack"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:src="@drawable/ic_back_white_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBack">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15sdp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/product_sans_bold"
+                android:gravity="center"
+                android:text="@string/choose_subscription_plan"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_18ssp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:src="@drawable/ic_complimentary" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Text12RegularWhite"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/_1_complimentary_night_stay" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:src="@drawable/ic_tea_coffee" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Text12RegularWhite"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/free_tea_coffee_daily" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:src="@drawable/ic_members_event" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Text12RegularWhite"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/members_only_events_pass" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:src="@drawable/ic_priority_access" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Text12RegularWhite"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/priority_access_to_events" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:src="@drawable/ic_bottle" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Text12RegularWhite"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/_1_bottle_of_wine_during_your_stay" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlPerMonth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_50sdp"
+                    android:background="@drawable/dr_black_bg_with_light_white_border_25"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_12sdp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text14BoldWhite"
+                            android:layout_width="wrap_content"
+                            android:text="1,000/" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text10RegularWhite"
+                            android:layout_width="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            android:text="@string/per_month" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlPerYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/dr_black_bg_with_light_white_border_25"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_12sdp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text14BoldWhite"
+                            android:layout_width="wrap_content"
+                            android:text="1,000/ " />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Text10RegularWhite"
+                            android:layout_width="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="@string/per_year" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnContinue"
+                    style="@style/ButtonParentStyle"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/dr_light_gray_bg_25"
+                    android:text="@string/str_continue"
+                    android:textColor="@color/colorBlack" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

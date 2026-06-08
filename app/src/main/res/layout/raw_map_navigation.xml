@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:id="@+id/llImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/ivIcon"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                app:actualImageResource="@drawable/ic_how_reach"
+                app:failureImage="@drawable/ic_placeholder_square"
+                app:placeholderImage="@drawable/ic_placeholder_square" />
+
+            <RelativeLayout
+                android:id="@+id/rlCount"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/dr_black_circle"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text12BoldWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:padding="@dimen/_1sdp"
+                    android:text="3" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/Text12RegularGray"
+                android:layout_width="wrap_content"
+                android:text="Goa International Airport" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDescription"
+                style="@style/Text11RegularGray"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                tools:text="Goa International Airport" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnNavigation"
+            style="@style/SmallButtonPrimaryStyle"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/navigation"
+            android:textSize="@dimen/_8sdp" />
+
+    </LinearLayout>
+
+    <View
+        style="@style/ViewLightBorderStyle"
+        android:layout_marginVertical="@dimen/_12sdp" />
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llDiscount"
+    android:layout_width="@dimen/_120sdp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/_8sdp"
+    android:background="@drawable/dr_gradient_secondary_corner_10"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/_15sdp"
+    android:paddingVertical="@dimen/_20sdp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgDiscount"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_tea_coffee" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDiscount"
+        style="@style/Text18BoldWhite"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:gravity="center"
+        android:text="50%" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/Text12MediumWhite"
+        android:gravity="center"
+        android:text="Discount on" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDiscountTitle"
+        style="@style/Text10MediumWhite"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:gravity="center"
+        android:text="Discount on" />
+
+</LinearLayout>

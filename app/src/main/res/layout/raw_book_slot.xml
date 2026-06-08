@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tvType"
+    style="@style/Text14MediumPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_1sdp"
+    android:layout_marginVertical="@dimen/_7sdp"
+    android:background="@drawable/dr_gray_border_10"
+    android:gravity="center"
+    android:paddingHorizontal="@dimen/_15sdp"
+    android:paddingVertical="@dimen/_10sdp"
+    android:singleLine="false"
+    tools:text="Gold+ • 3,500 INR" />

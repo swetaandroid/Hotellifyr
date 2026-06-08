@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_7sdp"
+    android:layout_marginVertical="@dimen/_7sdp"
+    android:elevation="0dp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardCornerRadius="@dimen/_20sdp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_gallery_1" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_minus18sdp"
+            android:background="@drawable/dr_white_bg_6"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/_2sdp"
+            android:paddingStart="@dimen/_2sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="5"
+            tools:listitem="@layout/raw_pager_image" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvName"
+                style="@style/Text12MediumBlack"
+                android:layout_width="0dp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:text="@string/signature_suite" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRoomDetails"
+                style="@style/Text10RegularPrimary"
+                android:layout_width="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:singleLine="false"
+                android:text="@string/room_details" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:src="@drawable/ic_room_secondary" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvArea"
+                style="@style/Text10RegularBlack"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="60 m2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/ic_guests_secondary" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGuests"
+                style="@style/Text10RegularBlack"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="4 Guests" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:src="@drawable/ic_room_secondary" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBeds"
+                style="@style/Text10RegularBlack"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="2 Beds" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:src="@drawable/ic_bathroom_secondary" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBathroom"
+                style="@style/Text10RegularBlack"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="2 Bathroom" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/ViewBorderStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginVertical="@dimen/_10sdp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRoomRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="3"
+            tools:listitem="@layout/raw_room_rates" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

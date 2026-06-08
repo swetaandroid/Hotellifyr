@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:padding="@dimen/_15sdp"
+    tools:context=".view.activity.auth.OTPActivity">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_gravity="center"
+        android:layout_marginVertical="@dimen/_30sdp"
+        android:src="@drawable/ic_new_logo" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_2sdp"
+        android:background="@drawable/dr_white_bg_30"
+        android:elevation="@dimen/_2sdp"
+        android:orientation="vertical"
+        android:padding="@dimen/_15sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWelcomeBack"
+            style="@style/Text16BoldBlack"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:singleLine="false"
+            android:text="@string/welcome_back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOTPDesc"
+            style="@style/Text12RegularGray"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:singleLine="false"
+            android:text="@string/login_to_manage_points_redeem_rewards_and_enjoy_member_only_discounts" />
+
+        <com.mukeshsolanki.OtpView
+            android:id="@+id/otpView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:autofillHints="-"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:itemBackground="@drawable/dr_light_gray_bg"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_14ssp"
+            app:OtpHideLineWhenFilled="true"
+            app:OtpItemCount="6"
+            app:OtpItemHeight="@dimen/_40sdp"
+            app:OtpItemSpacing="@dimen/_8sdp"
+            app:OtpItemWidth="@dimen/_32sdp"
+            app:OtpLineColor="@color/colorPrimary" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnContinue"
+            style="@style/ButtonPrimaryStyle"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/txt_continue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvResendOtp"
+            style="@style/Text12RegularBlack"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:singleLine="false"
+            android:text="@string/did_not_get_the_code_resend_it" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

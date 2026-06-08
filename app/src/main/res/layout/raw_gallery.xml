@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_65sdp">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/ivGallery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_gallery_1"
+        app:failureImage="@drawable/ic_placeholder_square"
+        app:failureImageScaleType="fitXY"
+        app:placeholderImage="@drawable/ic_placeholder_square"
+        app:placeholderImageScaleType="fitXY" />
+
+    <View
+        android:id="@+id/viewShadow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dr_center_gradient_transparent_bg"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMorePhotos"
+        style="@style/Text12BoldWhite"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:alpha="0.7"
+        android:background="@color/colorTransparent"
+        android:text="+40 Photos"
+        android:visibility="gone" />
+
+</RelativeLayout>

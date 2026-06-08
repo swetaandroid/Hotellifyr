@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llRatingView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/_10sdp"
+    android:background="@drawable/dr_gray_light_border_5"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingHorizontal="@dimen/_10sdp"
+    android:paddingVertical="@dimen/_8sdp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:src="@drawable/ic_star_fill" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRate"
+        style="@style/Text12RegularBlack"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:text="5" />
+
+</LinearLayout>

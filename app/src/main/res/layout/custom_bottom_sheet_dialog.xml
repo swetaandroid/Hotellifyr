@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llNoData"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/_15sdp"
+    app:behavior_hideable="true"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivClose"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_gravity="end"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_close" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_120sdp"
+        android:src="@drawable/ic_create_wishlist" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        style="@style/Text16BoldBlack"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/create_your_wishlist" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDescription"
+        style="@style/Text12RegularBlack"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/_25sdp"
+        android:singleLine="false"
+        android:text="@string/as_your_search_tap_heart_icon_to_save_your_favorite_hotels_to_a_wishlist" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/button"
+        style="@style/ButtonPrimaryStyle"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/get_started" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNotNow"
+        style="@style/Text12MediumPrimary"
+        android:layout_width="wrap_content"
+        android:padding="@dimen/_8sdp"
+        android:text="@string/not_now" />
+
+</LinearLayout>

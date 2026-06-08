@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "476212708708",
+    "project_id": "hotellifyr",
+    "storage_bucket": "hotellifyr.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:476212708708:android:9e594ca76a7ab1d90de671",
+        "android_client_info": {
+          "package_name": "com.xongolab.hotellifyr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHU-vPe0YUmuuRTgGTBltNICimcP1sT20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

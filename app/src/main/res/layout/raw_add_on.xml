@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_2sdp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        style="@style/Text12RegularBlack"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:singleLine="false"
+        android:text="Scuba Diving (Gold+ Package)" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPrice"
+        style="@style/Text12MediumPrimary"
+        android:layout_width="wrap_content"
+        android:text="3,500.00 INR" />
+
+</LinearLayout>

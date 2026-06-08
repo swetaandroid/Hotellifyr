@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/_10sdp"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        style="@style/Text12RegularGray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_12sdp"
+        android:text="Transport" />
+
+    <View
+        android:id="@+id/viewBorder"
+        style="@style/ViewBorderStyle"
+        android:background="@color/colorPrimary"
+        android:visibility="visible" />
+
+</LinearLayout>

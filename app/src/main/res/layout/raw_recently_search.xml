@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlRecentSearch"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:gravity="center_vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icSearch"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_search_pink" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_toStartOf="@id/icClose"
+        android:layout_toEndOf="@id/icSearch"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSearchTitle"
+            style="@style/Text12MediumBlack"
+            android:text="@string/recently_search" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSearchDesc"
+            style="@style/Text10RegularGray"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="17-18 July  •  1 Room, 1 Guest"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icClose"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/_8sdp"
+        android:src="@drawable/ic_close_black"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</RelativeLayout>

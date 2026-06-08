@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_170sdp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_1sdp"
+    android:elevation="0dp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardCornerRadius="@dimen/_10sdp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dr_gray_border_10"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSeat"
+                style="@style/Text12RegularBlack"
+                android:layout_width="wrap_content"
+                android:background="@drawable/dr_gray_border_30"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_5sdp"
+                android:text="7 Seater" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivRadio"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/ic_radio_unselect" />
+
+        </RelativeLayout>
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/ivProfile"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_80sdp"
+            app:actualImageResource="@drawable/ic_airport_pick"
+            app:actualImageScaleType="fitCenter"
+            app:placeholderImage="@drawable/ic_placeholder_rectangle"
+            app:placeholderImageScaleType="fitXY" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/Text12BoldBlack"
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="Toyota Innova Crysta" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPrice"
+            style="@style/Text10MediumPrimary"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="center_horizontal"
+            android:singleLine="false"
+            android:text="₹ 2,550.00" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
